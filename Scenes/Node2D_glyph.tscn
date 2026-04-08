@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dguru6vfvmtk8"]
+
+[ext_resource type="Texture2D" uid="uid://brlonxw3th5e8" path="res://Resources/Symbols/SimpleWhite/Separator-L.png" id="2_l2emf"]
+
+[node name="Glyph" type="Node2D"]
+
+[node name="Prime" type="Sprite2D" parent="."]
+
+[node name="Separator-L" type="Sprite2D" parent="."]
+texture = ExtResource("2_l2emf")
+
+[node name="Definer" type="Sprite2D" parent="."]
+position = Vector2(0, -135)
+
+[node name="Modifier_01" type="Sprite2D" parent="."]
+position = Vector2(0, 135)
+
+[node name="Modifier_02" type="Sprite2D" parent="."]
+position = Vector2(-100, 135)
+
+[node name="Modifier_03" type="Sprite2D" parent="."]
+position = Vector2(100, 135)

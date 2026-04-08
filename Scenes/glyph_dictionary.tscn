@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://b3352kavs4j3y"]
+
+[ext_resource type="PackedScene" uid="uid://bpuipjxe5racv" path="res://Scenes/glyph.tscn" id="2_rs3tl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_21xkr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cd33r"]
+bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjvhh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+
+[node name="Dict_Contents" type="HBoxContainer" unique_id=1722322359]
+
+[node name="0_InputBox" type="PanelContainer" parent="." unique_id=1491567756]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_21xkr")
+
+[node name="0_Ib_Contents" type="VBoxContainer" parent="0_InputBox" unique_id=1633843538]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="0_IbC_TopMargin" type="MarginContainer" parent="0_InputBox/0_Ib_Contents" unique_id=1529913145]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="0_IbC_MidMargin_01" type="MarginContainer" parent="0_InputBox/0_Ib_Contents" unique_id=74952557]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="SearchFieldContents" type="HBoxContainer" parent="0_InputBox/0_Ib_Contents" unique_id=1162577242]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+alignment = 1
+
+[node name="SearchBox" type="LineEdit" parent="0_InputBox/0_Ib_Contents/SearchFieldContents" unique_id=1743118802]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+focus_behavior_recursive = 2
+theme_override_font_sizes/font_size = 16
+
+[node name="SearchButton" type="Button" parent="0_InputBox/0_Ib_Contents/SearchFieldContents" unique_id=1211315887]
+custom_minimum_size = Vector2(40, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "🔎"
+
+[node name="SuggestionsContents" type="HBoxContainer" parent="0_InputBox/0_Ib_Contents" unique_id=1874669060]
+layout_mode = 2
+alignment = 1
+
+[node name="SuggestionScroll" type="ScrollContainer" parent="0_InputBox/0_Ib_Contents/SuggestionsContents" unique_id=1115205122]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cd33r")
+
+[node name="SuggestionList" type="VBoxContainer" parent="0_InputBox/0_Ib_Contents/SuggestionsContents/SuggestionScroll" unique_id=1613723273]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="SC_RightMargin" type="MarginContainer" parent="0_InputBox/0_Ib_Contents/SuggestionsContents" unique_id=1236465304]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="0_IbC_MidMargin_02" type="MarginContainer" parent="0_InputBox/0_Ib_Contents" unique_id=1899716281]
+visible = false
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="RefreshLib_Btn" type="Button" parent="0_InputBox/0_Ib_Contents" unique_id=2135240979]
+visible = false
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Refresh Library"
+
+[node name="IbC_BotMargin" type="MarginContainer" parent="0_InputBox/0_Ib_Contents" unique_id=1338288618]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="0_OutputBox" type="PanelContainer" parent="." unique_id=801756518]
+custom_minimum_size = Vector2(600, 500)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jjvhh")
+
+[node name="0_Ob_Contents" type="VBoxContainer" parent="0_OutputBox" unique_id=773667958]
+layout_mode = 2
+
+[node name="0_OpC_TopMargin" type="MarginContainer" parent="0_OutputBox/0_Ob_Contents" unique_id=1169070537]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Glyph_Dict_Display" type="Control" parent="0_OutputBox/0_Ob_Contents" unique_id=1319066729]
+custom_minimum_size = Vector2(0, 165)
+layout_mode = 2
+
+[node name="Glyph_Dict" parent="0_OutputBox/0_Ob_Contents/Glyph_Dict_Display" unique_id=2013700600 instance=ExtResource("2_rs3tl")]
+layout_mode = 1
+
+[node name="DisplayBox" type="RichTextLabel" parent="0_OutputBox/0_Ob_Contents" unique_id=2073318067]
+custom_minimum_size = Vector2(250, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="0_OpC_BotMargin" type="MarginContainer" parent="0_OutputBox/0_Ob_Contents" unique_id=688527732]
+layout_mode = 2
+size_flags_vertical = 3

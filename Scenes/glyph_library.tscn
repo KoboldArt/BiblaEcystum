@@ -1,0 +1,239 @@
+[gd_scene format=3 uid="uid://bjraj25yxyxsb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0s1vk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xsytr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ssja"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rv1yq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yuuej"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yrqho"]
+content_margin_left = 24.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6s73v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u1arh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3y0mn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k1kxl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_raw8r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gsluj"]
+content_margin_left = 24.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7k3om"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c03dm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b3kmb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ep8k2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lcos8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hw4eg"]
+content_margin_left = 24.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsytr"]
+content_margin_top = 16.0
+bg_color = Color(0.24115619, 0.24115598, 0.2411561, 1)
+
+[node name="Library_Contents" type="HBoxContainer" unique_id=509814113]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1692377104]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1384545685]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PrimesOn" type="CheckBox" parent="MarginContainer/VBoxContainer" unique_id=1493332333]
+layout_mode = 2
+button_pressed = true
+text = "Prime Glyphs"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=371758060]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="FoldableContainer" type="FoldableContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=1524996541]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_styles/title_panel = SubResource("StyleBoxEmpty_0s1vk")
+theme_override_styles/title_hover_panel = SubResource("StyleBoxEmpty_xsytr")
+theme_override_styles/title_collapsed_panel = SubResource("StyleBoxEmpty_3ssja")
+theme_override_styles/title_collapsed_hover_panel = SubResource("StyleBoxEmpty_rv1yq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yuuej")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yrqho")
+folded = true
+title = "Concept"
+
+[node name="ConceptFilters" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/FoldableContainer" unique_id=180444592]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="NatureOn" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer/FoldableContainer/ConceptFilters" unique_id=1276957684]
+layout_mode = 2
+button_pressed = true
+text = "Nature"
+
+[node name="LifeOn" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer/FoldableContainer/ConceptFilters" unique_id=2050674040]
+layout_mode = 2
+button_pressed = true
+text = "Life"
+
+[node name="SocietyOn" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer/FoldableContainer/ConceptFilters" unique_id=1420172899]
+layout_mode = 2
+button_pressed = true
+text = "Society"
+
+[node name="DutyOn" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer/FoldableContainer/ConceptFilters" unique_id=2119246994]
+layout_mode = 2
+button_pressed = true
+text = "Duty"
+
+[node name="SpaceOn" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer/FoldableContainer/ConceptFilters" unique_id=965845305]
+layout_mode = 2
+button_pressed = true
+text = "Space"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1393336785]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="FoldableContainer" type="FoldableContainer" parent="MarginContainer/VBoxContainer/MarginContainer2" unique_id=430167376]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_styles/title_panel = SubResource("StyleBoxEmpty_6s73v")
+theme_override_styles/title_hover_panel = SubResource("StyleBoxEmpty_u1arh")
+theme_override_styles/title_collapsed_panel = SubResource("StyleBoxEmpty_3y0mn")
+theme_override_styles/title_collapsed_hover_panel = SubResource("StyleBoxEmpty_k1kxl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_raw8r")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gsluj")
+folded = true
+title = "Process"
+
+[node name="ProcessFilters" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/FoldableContainer" unique_id=114451203]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PerceptionOn" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer2/FoldableContainer/ProcessFilters" unique_id=465127976]
+layout_mode = 2
+button_pressed = true
+text = "Perception"
+
+[node name="RecognitionOn" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer2/FoldableContainer/ProcessFilters" unique_id=432216040]
+layout_mode = 2
+button_pressed = true
+text = "Recognition"
+
+[node name="RecordOn" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer2/FoldableContainer/ProcessFilters" unique_id=1996206220]
+layout_mode = 2
+button_pressed = true
+text = "Record"
+
+[node name="CommandOn" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer2/FoldableContainer/ProcessFilters" unique_id=1208590433]
+layout_mode = 2
+button_pressed = true
+text = "Command"
+
+[node name="ActionOn" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer2/FoldableContainer/ProcessFilters" unique_id=266187429]
+layout_mode = 2
+button_pressed = true
+text = "Action
+"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1554270580]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="FoldableContainer" type="FoldableContainer" parent="MarginContainer/VBoxContainer/MarginContainer3" unique_id=198013864]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_styles/title_panel = SubResource("StyleBoxEmpty_7k3om")
+theme_override_styles/title_hover_panel = SubResource("StyleBoxEmpty_c03dm")
+theme_override_styles/title_collapsed_panel = SubResource("StyleBoxEmpty_b3kmb")
+theme_override_styles/title_collapsed_hover_panel = SubResource("StyleBoxEmpty_ep8k2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lcos8")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hw4eg")
+folded = true
+title = "Class"
+
+[node name="ClassFilters" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer3/FoldableContainer" unique_id=986485937]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Worker" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer3/FoldableContainer/ClassFilters" unique_id=1804626801]
+layout_mode = 2
+button_pressed = true
+text = "Worker
+"
+
+[node name="Soldier" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer3/FoldableContainer/ClassFilters" unique_id=44823163]
+layout_mode = 2
+button_pressed = true
+text = "Soldier
+"
+
+[node name="Scholar" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer3/FoldableContainer/ClassFilters" unique_id=1703259487]
+layout_mode = 2
+button_pressed = true
+text = "Scholar
+"
+
+[node name="Priest" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer3/FoldableContainer/ClassFilters" unique_id=62602044]
+layout_mode = 2
+button_pressed = true
+text = "Priest
+"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1362441344]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="CompsOn" type="CheckBox" parent="MarginContainer/VBoxContainer" unique_id=1431419334]
+layout_mode = 2
+button_pressed = true
+text = "Compund Glyphs"
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=606392416]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 32
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer2" unique_id=975503570]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xsytr")
+
+[node name="LibraryContainer" type="GridContainer" parent="MarginContainer2/ScrollContainer" unique_id=1509112193]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 12
+columns = 4

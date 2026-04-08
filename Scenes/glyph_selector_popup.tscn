@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://cxgebk14ymso6"]
+
+[ext_resource type="Script" uid="uid://qmde25n16ca" path="res://Scripts/glyph_selector_popup.gd" id="1_y0h7k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0h7k"]
+bg_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.29411766)
+shadow_size = 8
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5mob"]
+bg_color = Color(0.15847227, 0.15847233, 0.15847221, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryw4a"]
+bg_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0.3254902)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="glyph_selector_popup" type="Control" unique_id=1934102338]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y0h7k")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1256529491]
+layout_mode = 0
+offset_left = -200.0
+offset_top = -175.0
+offset_right = 200.0
+offset_bottom = 175.0
+pivot_offset = Vector2(200, 175)
+theme_override_styles/panel = SubResource("StyleBoxFlat_y0h7k")
+
+[node name="ScrollPopupContents" type="ScrollContainer" parent="." unique_id=111213897]
+layout_mode = 0
+offset_left = -175.0
+offset_top = -150.0
+offset_right = 175.0
+offset_bottom = 150.0
+pivot_offset = Vector2(175, 150)
+theme_override_styles/panel = SubResource("StyleBoxFlat_c5mob")
+
+[node name="PpContents_Margin" type="MarginContainer" parent="ScrollPopupContents" unique_id=1359041217]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+
+[node name="PopupContents" type="GridContainer" parent="ScrollPopupContents/PpContents_Margin" unique_id=671781748]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 5
+
+[node name="GlyphButton" type="Button" parent="." unique_id=841324176]
+visible = false
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "earth, soil, ground, etc."
+theme_override_colors/icon_normal_color = Color(0.76662105, 0.7666191, 0.7666195, 0.5019608)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ryw4a")
+icon_alignment = 1
+expand_icon = true
+metadata/Glyph_ID = ""

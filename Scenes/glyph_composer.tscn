@@ -1,0 +1,176 @@
+[gd_scene format=3 uid="uid://b7b221amwl8rb"]
+
+[ext_resource type="PackedScene" uid="uid://bpuipjxe5racv" path="res://Scenes/glyph.tscn" id="3_8by4d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h70y6"]
+bg_color = Color(0.4006977, 0.40069774, 0.40069756, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.2509804)
+shadow_size = 2
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="Theme" id="Theme_u2v7n"]
+RichTextLabel/colors/font_outline_color = Color(0.14, 0, 0.0023332976, 1)
+RichTextLabel/constants/outline_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vbip"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+border_color = Color(0.8, 0.8, 0.8, 0.5019608)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4mob"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0.5019608)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Control" type="Control" unique_id=2070876221]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardPanel" type="PanelContainer" parent="." unique_id=423630414]
+custom_minimum_size = Vector2(470, 420)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -126.5
+offset_right = 90.0
+offset_bottom = 126.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h70y6")
+
+[node name="CardContents_Marg" type="MarginContainer" parent="CardPanel" unique_id=1959032035]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="CardContents" type="VBoxContainer" parent="CardPanel/CardContents_Marg" unique_id=629266948]
+custom_minimum_size = Vector2(152, 232)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Glyph_Marg" type="MarginContainer" parent="CardPanel/CardContents_Marg/CardContents" unique_id=1593410871]
+custom_minimum_size = Vector2(164, 164)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Glyph_Comp" parent="CardPanel/CardContents_Marg/CardContents/Glyph_Marg" unique_id=917642904 instance=ExtResource("3_8by4d")]
+layout_mode = 2
+
+[node name="ID_Marg" type="MarginContainer" parent="CardPanel/CardContents_Marg/CardContents" unique_id=957906564]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_constants/margin_bottom = 8
+
+[node name="ID_Contents" type="HBoxContainer" parent="CardPanel/CardContents_Marg/CardContents/ID_Marg" unique_id=1732859180]
+layout_mode = 2
+alignment = 1
+
+[node name="ID_Label" type="RichTextLabel" parent="CardPanel/CardContents_Marg/CardContents/ID_Marg/ID_Contents" unique_id=788008528]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+focus_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 0.5019608)
+bbcode_enabled = true
+text = "ID:"
+horizontal_alignment = 1
+vertical_alignment = 1
+selection_enabled = true
+
+[node name="ID_Box" type="RichTextLabel" parent="CardPanel/CardContents_Marg/CardContents/ID_Marg/ID_Contents" unique_id=123273609]
+custom_minimum_size = Vector2(65, 20)
+layout_mode = 2
+focus_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 0.5019608)
+bbcode_enabled = true
+text = "000000"
+horizontal_alignment = 1
+vertical_alignment = 1
+selection_enabled = true
+
+[node name="1_IbC_Separator" type="HSeparator" parent="CardPanel/CardContents_Marg/CardContents" unique_id=108285160]
+layout_mode = 2
+
+[node name="Feedback_Marg" type="MarginContainer" parent="CardPanel/CardContents_Marg/CardContents" unique_id=920979863]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="1_IbC_FeedbackMsg" type="RichTextLabel" parent="CardPanel/CardContents_Marg/CardContents/Feedback_Marg" unique_id=1919361089]
+layout_mode = 2
+theme = SubResource("Theme_u2v7n")
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DefLabel_Marg" type="MarginContainer" parent="CardPanel/CardContents_Marg/CardContents" unique_id=1214407575]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="DefLabel" type="Label" parent="CardPanel/CardContents_Marg/CardContents/DefLabel_Marg" unique_id=1884602866]
+layout_mode = 2
+text = "Definition"
+horizontal_alignment = 1
+
+[node name="CardDef_Marg" type="MarginContainer" parent="CardPanel/CardContents_Marg/CardContents" unique_id=1706311108]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_right = 128
+
+[node name="DefinitionBox" type="TextEdit" parent="CardPanel/CardContents_Marg/CardContents/CardDef_Marg" unique_id=2126758669]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vbip")
+theme_override_styles/focus = SubResource("StyleBoxFlat_l4mob")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_7vbip")
+placeholder_text = "eg.: lake, pond"
+wrap_mode = 1
+caret_blink = true
+
+[node name="AddBtn_Marg" type="MarginContainer" parent="CardPanel/CardContents_Marg/CardContents" unique_id=1156639826]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 8
+
+[node name="AddToDictionary" type="Button" parent="CardPanel/CardContents_Marg/CardContents/AddBtn_Marg" unique_id=904588796]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 14
+text = "Add"

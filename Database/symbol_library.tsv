@@ -1,0 +1,75 @@
+ID	Concept	Stage	Caste	Meanings
+00				
+A1	Nature	Perception	Worker	earth, ground, soil, solid
+A2	Nature	Recognition	Worker	body, form, shape
+B1	Nature	Perception	Soldier	fire, heat, aggression
+B2	Nature	Recognition	Soldier	rigidity, durability, stability
+C1	Nature	Perception	Scholar	light, vision
+C2	Nature	Recognition	Scholar	air, gas, pheromone
+C3	Nature	Record	Scholar	sky
+D1	Nature	Perception	Priest	darkness
+D2	Nature	Recognition	Priest	water, liquid, calmness
+D3	Nature	Record	Priest	time, cycle
+E1	Life	Perception	Worker	food, nutrition, eat, consume
+E2	Life	Recognition	Worker	decay, rot, death
+E3	Life	Record	Worker	egg, origin, beginning, birth
+E5	Life	Action	Worker	grow, mature, increase
+F1	Life	Perception	Soldier	sense, percieve, see, hear, touch, taste
+F3	Life	Record	Soldier	extension, limb, appandage, leg, arm, tail
+F5	Life	Action	Soldier	move, motion
+G2	Life	Recognition	Scholar	essence, lifeforce
+G3	Life	Record	Scholar	repeat, pattern, array
+H1	Life	Perception	Priest	life, alive, conscious
+H2	Life	Recognition	Priest	soul, emotion
+H4	Life	Command	Priest	determination, grit, endurance
+H5	Life	Action	Priest	rest, stillness, stop, death
+I1	Society	Perception	Worker	group, collective, colony, hive, E'cys, nation
+I3	Society	Record	Worker	record, mark, sign, letter, symbol, writing
+I4	Society	Command	Worker	duty, job, responsibility
+I5	Society	Action	Worker	create, make, produce
+J1	Society	Perception	Soldier	other, foreign, alien, unknown
+J3	Society	Record	Soldier	chaos, disarray, disorder
+J4	Society	Command	Soldier	order, organized, system, rank
+J5	Society	Action	Soldier	act, action, reaction
+K1	Society	Perception	Scholar	speaker, source
+K2	Society	Recognition	Scholar	recipient, receiver, recognition, understand, end
+K3	Society	Record	Scholar	knowledge, information
+K4	Society	Command	Scholar	law, rule
+K5	Society	Action	Scholar	transfer
+L2	Society	Recognition	Priest	truth, "the sacred text"
+L3	Society	Record	Priest	ritual, faith
+L4	Society	Command	Priest	command, govern, control
+L5	Society	Action	Priest	sacrifice, blessing
+M1	Duty	Perception	Worker	pain, hurt, damage
+M2	Duty	Recognition	Worker	weak, prey
+M4	Duty	Command	Worker	repair, heal
+M5	Duty	Action	Worker	work
+N1	Duty	Perception	Soldier	danger, threat
+N2	Duty	Recognition	Soldier	strong, hunter
+N4	Duty	Command	Soldier	weapon
+N5	Duty	Action	Soldier	protect, defense, reinforce
+O1	Duty	Perception	Scholar	energy
+O2	Duty	Recognition	Scholar	logic, strategy, mind
+O3	Duty	Record	Scholar	number, count
+O4	Duty	Command	Scholar	divide, fraction, part
+O5	Duty	Action	Scholar	multiply
+P1	Duty	Perception	Priest	void, absence, death
+P2	Duty	Recognition	Priest	spirit, god, personality
+P3	Duty	Record	Priest	sickness, curse, hex
+P4	Duty	Command	Priest	union, join, together
+Q1	Space	Perception	Worker	same, self
+Q2	Space	Recognition	Worker	center, middle, core
+Q3	Space	Record	Worker	weight, mass
+Q4	Space	Command	Worker	down, below, under, bottom
+R1	Space	Perception	Soldier	size, volume
+R2	Space	Recognition	Soldier	edge, side, border
+R3	Space	Record	Soldier	space, field, area
+R4	Space	Command	Soldier	front, ahead, infront
+S1	Space	Perception	Scholar	different, opposite
+S2	Space	Recognition	Scholar	outside, out, external
+S3	Space	Record	Scholar	flat, straight, line
+S4	Space	Command	Scholar	back, behind, follow
+T1	Space	Perception	Priest	distance
+T2	Space	Recognition	Priest	inside, in, internal
+T3	Space	Record	Priest	round, curved, sphere
+T4	Space	Command	Priest	up, above, top

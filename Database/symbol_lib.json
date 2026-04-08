@@ -1,0 +1,728 @@
+{
+	"00": {
+		"Caste": "",
+		"Concept": "",
+		"Meanings": [
+			""
+		],
+		"Stage": ""
+	},
+	"A1": {
+		"Caste": "Worker",
+		"Concept": "Nature",
+		"Meanings": [
+			"earth",
+			"ground",
+			"soil",
+			"solid",
+			"stone"
+		],
+		"Stage": "Perception"
+	},
+	"A2": {
+		"Caste": "Worker",
+		"Concept": "Nature",
+		"Meanings": [
+			"body",
+			"form",
+			"shape"
+		],
+		"Stage": "Recognition"
+	},
+	"B1": {
+		"Caste": "Soldier",
+		"Concept": "Nature",
+		"Meanings": [
+			"fire",
+			"heat",
+			"aggression"
+		],
+		"Stage": "Perception"
+	},
+	"B2": {
+		"Caste": "Soldier",
+		"Concept": "Nature",
+		"Meanings": [
+			"rigidity",
+			"durability",
+			"stability"
+		],
+		"Stage": "Recognition"
+	},
+	"C1": {
+		"Caste": "Scholar",
+		"Concept": "Nature",
+		"Meanings": [
+			"light",
+			"vision"
+		],
+		"Stage": "Perception"
+	},
+	"C2": {
+		"Caste": "Scholar",
+		"Concept": "Nature",
+		"Meanings": [
+			"air",
+			"gas",
+			"pheromone"
+		],
+		"Stage": "Recognition"
+	},
+	"C3": {
+		"Caste": "Scholar",
+		"Concept": "Nature",
+		"Meanings": [
+			"sky"
+		],
+		"Stage": "Record"
+	},
+	"D1": {
+		"Caste": "Priest",
+		"Concept": "Nature",
+		"Meanings": [
+			"darkness"
+		],
+		"Stage": "Perception"
+	},
+	"D2": {
+		"Caste": "Priest",
+		"Concept": "Nature",
+		"Meanings": [
+			"water",
+			"liquid",
+			"calmness",
+			"cold"
+		],
+		"Stage": "Recognition"
+	},
+	"D3": {
+		"Caste": "Priest",
+		"Concept": "Nature",
+		"Meanings": [
+			"time",
+			"cycle"
+		],
+		"Stage": "Record"
+	},
+	"E1": {
+		"Caste": "Worker",
+		"Concept": "Life",
+		"Meanings": [
+			"food",
+			"nutrition",
+			"eat",
+			"consume"
+		],
+		"Stage": "Perception"
+	},
+	"E2": {
+		"Caste": "Worker",
+		"Concept": "Life",
+		"Meanings": [
+			"decay",
+			"rot",
+			"death"
+		],
+		"Stage": "Recognition"
+	},
+	"E3": {
+		"Caste": "Worker",
+		"Concept": "Life",
+		"Meanings": [
+			"egg",
+			"origin",
+			"beginning",
+			"birth"
+		],
+		"Stage": "Record"
+	},
+	"E5": {
+		"Caste": "Worker",
+		"Concept": "Life",
+		"Meanings": [
+			"grow",
+			"mature",
+			"increase"
+		],
+		"Stage": "Action"
+	},
+	"F1": {
+		"Caste": "Soldier",
+		"Concept": "Life",
+		"Meanings": [
+			"sense",
+			"percieve",
+			"see",
+			"hear",
+			"touch",
+			"taste"
+		],
+		"Stage": "Perception"
+	},
+	"F3": {
+		"Caste": "Soldier",
+		"Concept": "Life",
+		"Meanings": [
+			"extension",
+			"limb",
+			"appandage",
+			"leg",
+			"arm",
+			"tail"
+		],
+		"Stage": "Record"
+	},
+	"F5": {
+		"Caste": "Soldier",
+		"Concept": "Life",
+		"Meanings": [
+			"move",
+			"motion"
+		],
+		"Stage": "Action"
+	},
+	"G2": {
+		"Caste": "Scholar",
+		"Concept": "Life",
+		"Meanings": [
+			"essence",
+			"lifeforce"
+		],
+		"Stage": "Recognition"
+	},
+	"G3": {
+		"Caste": "Scholar",
+		"Concept": "Life",
+		"Meanings": [
+			"repeat",
+			"pattern",
+			"array"
+		],
+		"Stage": "Record"
+	},
+	"H1": {
+		"Caste": "Priest",
+		"Concept": "Life",
+		"Meanings": [
+			"life",
+			"alive",
+			"conscious"
+		],
+		"Stage": "Perception"
+	},
+	"H2": {
+		"Caste": "Priest",
+		"Concept": "Life",
+		"Meanings": [
+			"soul",
+			"emotion"
+		],
+		"Stage": "Recognition"
+	},
+	"H4": {
+		"Caste": "Priest",
+		"Concept": "Life",
+		"Meanings": [
+			"determination",
+			"grit",
+			"endurance"
+		],
+		"Stage": "Command"
+	},
+	"H5": {
+		"Caste": "Priest",
+		"Concept": "Life",
+		"Meanings": [
+			"rest",
+			"stillness",
+			"stop",
+			"death"
+		],
+		"Stage": "Action"
+	},
+	"I1": {
+		"Caste": "Worker",
+		"Concept": "Society",
+		"Meanings": [
+			"group",
+			"collective",
+			"colony",
+			"hive",
+			"E'cys",
+			"nation"
+		],
+		"Stage": "Perception"
+	},
+	"I3": {
+		"Caste": "Worker",
+		"Concept": "Society",
+		"Meanings": [
+			"record",
+			"mark",
+			"sign",
+			"letter",
+			"symbol",
+			"writing"
+		],
+		"Stage": "Record"
+	},
+	"I4": {
+		"Caste": "Worker",
+		"Concept": "Society",
+		"Meanings": [
+			"duty",
+			"job",
+			"responsibility"
+		],
+		"Stage": "Command"
+	},
+	"I5": {
+		"Caste": "Worker",
+		"Concept": "Society",
+		"Meanings": [
+			"create",
+			"make",
+			"produce"
+		],
+		"Stage": "Action"
+	},
+	"J1": {
+		"Caste": "Soldier",
+		"Concept": "Society",
+		"Meanings": [
+			"other",
+			"foreign",
+			"alien",
+			"unknown"
+		],
+		"Stage": "Perception"
+	},
+	"J3": {
+		"Caste": "Soldier",
+		"Concept": "Society",
+		"Meanings": [
+			"chaos",
+			"disarray",
+			"disorder"
+		],
+		"Stage": "Record"
+	},
+	"J4": {
+		"Caste": "Soldier",
+		"Concept": "Society",
+		"Meanings": [
+			"order",
+			"organized",
+			"system",
+			"rank"
+		],
+		"Stage": "Command"
+	},
+	"J5": {
+		"Caste": "Soldier",
+		"Concept": "Society",
+		"Meanings": [
+			"act",
+			"action",
+			"reaction"
+		],
+		"Stage": "Action"
+	},
+	"K1": {
+		"Caste": "Scholar",
+		"Concept": "Society",
+		"Meanings": [
+			"speaker",
+			"source"
+		],
+		"Stage": "Perception"
+	},
+	"K2": {
+		"Caste": "Scholar",
+		"Concept": "Society",
+		"Meanings": [
+			"recipient",
+			"receiver",
+			"recognition",
+			"understand",
+			"end"
+		],
+		"Stage": "Recognition"
+	},
+	"K3": {
+		"Caste": "Scholar",
+		"Concept": "Society",
+		"Meanings": [
+			"knowledge",
+			"information"
+		],
+		"Stage": "Record"
+	},
+	"K4": {
+		"Caste": "Scholar",
+		"Concept": "Society",
+		"Meanings": [
+			"law",
+			"rule"
+		],
+		"Stage": "Command"
+	},
+	"K5": {
+		"Caste": "Scholar",
+		"Concept": "Society",
+		"Meanings": [
+			"transfer"
+		],
+		"Stage": "Action"
+	},
+	"L2": {
+		"Caste": "Priest",
+		"Concept": "Society",
+		"Meanings": [
+			"truth",
+			"the sacred text"
+		],
+		"Stage": "Recognition"
+	},
+	"L3": {
+		"Caste": "Priest",
+		"Concept": "Society",
+		"Meanings": [
+			"ritual",
+			"faith"
+		],
+		"Stage": "Record"
+	},
+	"L4": {
+		"Caste": "Priest",
+		"Concept": "Society",
+		"Meanings": [
+			"command",
+			"govern",
+			"control"
+		],
+		"Stage": "Command"
+	},
+	"L5": {
+		"Caste": "Priest",
+		"Concept": "Society",
+		"Meanings": [
+			"sacrifice",
+			"blessing"
+		],
+		"Stage": "Action"
+	},
+	"M1": {
+		"Caste": "Worker",
+		"Concept": "Duty",
+		"Meanings": [
+			"pain",
+			"hurt",
+			"damage"
+		],
+		"Stage": "Perception"
+	},
+	"M2": {
+		"Caste": "Worker",
+		"Concept": "Duty",
+		"Meanings": [
+			"weak",
+			"prey"
+		],
+		"Stage": "Recognition"
+	},
+	"M4": {
+		"Caste": "Worker",
+		"Concept": "Duty",
+		"Meanings": [
+			"repair",
+			"heal"
+		],
+		"Stage": "Command"
+	},
+	"M5": {
+		"Caste": "Worker",
+		"Concept": "Duty",
+		"Meanings": [
+			"work"
+		],
+		"Stage": "Action"
+	},
+	"N1": {
+		"Caste": "Soldier",
+		"Concept": "Duty",
+		"Meanings": [
+			"danger",
+			"threat"
+		],
+		"Stage": "Perception"
+	},
+	"N2": {
+		"Caste": "Soldier",
+		"Concept": "Duty",
+		"Meanings": [
+			"strong",
+			"hunter"
+		],
+		"Stage": "Recognition"
+	},
+	"N4": {
+		"Caste": "Soldier",
+		"Concept": "Duty",
+		"Meanings": [
+			"weapon"
+		],
+		"Stage": "Command"
+	},
+	"N5": {
+		"Caste": "Soldier",
+		"Concept": "Duty",
+		"Meanings": [
+			"protect",
+			"defense",
+			"reinforce",
+			"safe"
+		],
+		"Stage": "Action"
+	},
+	"O1": {
+		"Caste": "Scholar",
+		"Concept": "Duty",
+		"Meanings": [
+			"energy"
+		],
+		"Stage": "Perception"
+	},
+	"O2": {
+		"Caste": "Scholar",
+		"Concept": "Duty",
+		"Meanings": [
+			"logic",
+			"strategy",
+			"mind"
+		],
+		"Stage": "Recognition"
+	},
+	"O3": {
+		"Caste": "Scholar",
+		"Concept": "Duty",
+		"Meanings": [
+			"number",
+			"count"
+		],
+		"Stage": "Record"
+	},
+	"O4": {
+		"Caste": "Scholar",
+		"Concept": "Duty",
+		"Meanings": [
+			"divide",
+			"fraction",
+			"part"
+		],
+		"Stage": "Command"
+	},
+	"O5": {
+		"Caste": "Scholar",
+		"Concept": "Duty",
+		"Meanings": [
+			"multiply"
+		],
+		"Stage": "Action"
+	},
+	"P1": {
+		"Caste": "Priest",
+		"Concept": "Duty",
+		"Meanings": [
+			"void",
+			"absence",
+			"death"
+		],
+		"Stage": "Perception"
+	},
+	"P2": {
+		"Caste": "Priest",
+		"Concept": "Duty",
+		"Meanings": [
+			"spirit",
+			"god",
+			"personality"
+		],
+		"Stage": "Recognition"
+	},
+	"P3": {
+		"Caste": "Priest",
+		"Concept": "Duty",
+		"Meanings": [
+			"sickness",
+			"curse",
+			"hex"
+		],
+		"Stage": "Record"
+	},
+	"P4": {
+		"Caste": "Priest",
+		"Concept": "Duty",
+		"Meanings": [
+			"union",
+			"join",
+			"together"
+		],
+		"Stage": "Command"
+	},
+	"Q1": {
+		"Caste": "Worker",
+		"Concept": "Space",
+		"Meanings": [
+			"same",
+			"self"
+		],
+		"Stage": "Perception"
+	},
+	"Q2": {
+		"Caste": "Worker",
+		"Concept": "Space",
+		"Meanings": [
+			"center",
+			"middle",
+			"core"
+		],
+		"Stage": "Recognition"
+	},
+	"Q3": {
+		"Caste": "Worker",
+		"Concept": "Space",
+		"Meanings": [
+			"weight",
+			"mass"
+		],
+		"Stage": "Record"
+	},
+	"Q4": {
+		"Caste": "Worker",
+		"Concept": "Space",
+		"Meanings": [
+			"down",
+			"below",
+			"under",
+			"bottom"
+		],
+		"Stage": "Command"
+	},
+	"R1": {
+		"Caste": "Soldier",
+		"Concept": "Space",
+		"Meanings": [
+			"size",
+			"volume"
+		],
+		"Stage": "Perception"
+	},
+	"R2": {
+		"Caste": "Soldier",
+		"Concept": "Space",
+		"Meanings": [
+			"edge",
+			"side",
+			"border"
+		],
+		"Stage": "Recognition"
+	},
+	"R3": {
+		"Caste": "Soldier",
+		"Concept": "Space",
+		"Meanings": [
+			"space",
+			"field",
+			"area"
+		],
+		"Stage": "Record"
+	},
+	"R4": {
+		"Caste": "Soldier",
+		"Concept": "Space",
+		"Meanings": [
+			"front",
+			"ahead",
+			"infront"
+		],
+		"Stage": "Command"
+	},
+	"S1": {
+		"Caste": "Scholar",
+		"Concept": "Space",
+		"Meanings": [
+			"different",
+			"opposite"
+		],
+		"Stage": "Perception"
+	},
+	"S2": {
+		"Caste": "Scholar",
+		"Concept": "Space",
+		"Meanings": [
+			"outside",
+			"out",
+			"external"
+		],
+		"Stage": "Recognition"
+	},
+	"S3": {
+		"Caste": "Scholar",
+		"Concept": "Space",
+		"Meanings": [
+			"flat",
+			"straight",
+			"line"
+		],
+		"Stage": "Record"
+	},
+	"S4": {
+		"Caste": "Scholar",
+		"Concept": "Space",
+		"Meanings": [
+			"back",
+			"behind",
+			"follow"
+		],
+		"Stage": "Command"
+	},
+	"T1": {
+		"Caste": "Priest",
+		"Concept": "Space",
+		"Meanings": [
+			"distance"
+		],
+		"Stage": "Perception"
+	},
+	"T2": {
+		"Caste": "Priest",
+		"Concept": "Space",
+		"Meanings": [
+			"inside",
+			"in",
+			"internal"
+		],
+		"Stage": "Recognition"
+	},
+	"T3": {
+		"Caste": "Priest",
+		"Concept": "Space",
+		"Meanings": [
+			"round",
+			"curved",
+			"sphere"
+		],
+		"Stage": "Record"
+	},
+	"T4": {
+		"Caste": "Priest",
+		"Concept": "Space",
+		"Meanings": [
+			"up",
+			"above",
+			"top"
+		],
+		"Stage": "Command"
+	}
+}

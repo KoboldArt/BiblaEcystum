@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://801fud57yndj"]
+
+[ext_resource type="Script" uid="uid://dx8bwqj7eqvcx" path="res://Scripts/expand_library.gd" id="1_10y65"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_10y65")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -36.0
+offset_right = 100.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="InputBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="AddToDB" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "ADD TO DATABASE"
+
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/AddToDB" to="." method="_on_add_to_db_pressed"]
