@@ -1,15 +1,11 @@
 extends Node
 
 @onready var dictionary_glyph : Node = self.find_child("Glyph_Dict")
-@onready var composer_glyph : Node = self.find_child("Glyph_Comp")
 @onready var search_box: LineEdit = self.find_child("SearchBox")
 @onready var display_box: RichTextLabel = self.find_child("DisplayBox")
 @onready var search_button: Button = self.find_child("SearchButton")
 @onready var suggestion_scroll : ScrollContainer = self.find_child("SuggestionScroll")
 @onready var suggestion_list : VBoxContainer = self.find_child("SuggestionList")
-@onready var add_to_dict : Button = self.find_child("AddToDictionary")
-@onready var definition_box : TextEdit = self.find_child("DefinitionBox")
-@onready var feedback_display : RichTextLabel = self.find_child("1_IbC_FeedbackMsg")
 @onready var font_selector : OptionButton = self.find_child("FontSelector")
 
 var suggestion_scroll_length : int
@@ -19,24 +15,12 @@ func _ready() -> void:
 	Core.font_selector = font_selector
 	Core.font_selector.item_selected.connect(Core.new_font_selected)
 	
-	## Glyph Composer Resources ##
-	Validator.glyph_node = composer_glyph
-	Validator.definition_box = definition_box
-	Validator.feedback_display = feedback_display
-	
-	add_to_dict.pressed.connect(_on_add_to_dictionary_pressed)
-	
 	search_box.text_submitted.connect(_on_input_box_text_submitted)
 	search_box.text_changed.connect(_on_input_box_text_update)
 	search_button.pressed.connect(_on_search_button_pressed)
 	
 	suggestion_scroll.visible = false
 	
-	glyph_edit_visible()
-
-
-func glyph_edit_visible() -> void:
-	composer_glyph.update_button_visibility(Vector3(1, 0, 0))
 	dictionary_glyph.update_button_visibility(Vector3(0, 0, 0))
 
 
@@ -172,13 +156,6 @@ func _input(event: InputEvent) -> void:
 		elif event.pressed and event.keycode == KEY_DOWN:
 			if search_box.is_editing():
 				search_box.unedit()
-
-
-func _on_add_to_dictionary_pressed() -> void:
-	var def_pack : Array = [definition_box.text, ""]
-	var ID_pack : Array = [composer_glyph.get_meta("Glyph_ID"), ""]
-	
-	Validator.validate_entry(def_pack, ID_pack, Core.comp_db, [true, false, false])
 
 
 func _on_check_button_toggled(toggled_on: bool) -> void:

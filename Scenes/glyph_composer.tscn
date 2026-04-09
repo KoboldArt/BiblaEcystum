@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b7b221amwl8rb"]
 
+[ext_resource type="Script" uid="uid://calmdo268w35v" path="res://Scripts/glyph_composer.gd" id="1_7vbip"]
 [ext_resource type="PackedScene" uid="uid://bpuipjxe5racv" path="res://Scenes/glyph.tscn" id="3_8by4d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h70y6"]
@@ -44,13 +45,14 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[node name="Control" type="Control" unique_id=2070876221]
+[node name="GlyphComposer" type="Control" unique_id=2070876221]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7vbip")
 
 [node name="CardPanel" type="PanelContainer" parent="." unique_id=423630414]
 custom_minimum_size = Vector2(470, 420)
@@ -80,6 +82,15 @@ custom_minimum_size = Vector2(152, 232)
 layout_mode = 2
 theme_override_constants/separation = 4
 
+[node name="CloseWindow" type="HBoxContainer" parent="CardPanel/CardContents_Marg/CardContents" unique_id=115694124]
+layout_mode = 2
+alignment = 2
+
+[node name="CloseBtn" type="Button" parent="CardPanel/CardContents_Marg/CardContents/CloseWindow" unique_id=1612089072]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "x"
+
 [node name="Glyph_Marg" type="MarginContainer" parent="CardPanel/CardContents_Marg/CardContents" unique_id=1593410871]
 custom_minimum_size = Vector2(164, 164)
 layout_mode = 2
@@ -89,7 +100,7 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="Glyph_Comp" parent="CardPanel/CardContents_Marg/CardContents/Glyph_Marg" unique_id=917642904 instance=ExtResource("3_8by4d")]
+[node name="Glyph" parent="CardPanel/CardContents_Marg/CardContents/Glyph_Marg" unique_id=917642904 instance=ExtResource("3_8by4d")]
 layout_mode = 2
 
 [node name="ID_Marg" type="MarginContainer" parent="CardPanel/CardContents_Marg/CardContents" unique_id=957906564]

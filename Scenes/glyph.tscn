@@ -133,6 +133,8 @@ offset_right = 160.0
 offset_bottom = -96.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
 
 [node name="PrimeLabel" type="RichTextLabel" parent="GlyphPanel/Glyph_Margin/Prime_Margin/Prime/PrimePanel" unique_id=1663363356]
 layout_mode = 2
@@ -178,6 +180,8 @@ offset_right = 160.0
 offset_bottom = -31.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
 
 [node name="DefinerLabel" type="RichTextLabel" parent="GlyphPanel/Glyph_Margin/Definer_Margin/Definer/DefinerPanel" unique_id=1886019232]
 layout_mode = 2
@@ -241,6 +245,8 @@ offset_right = -160.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
 
 [node name="Modifier01Label" type="RichTextLabel" parent="GlyphPanel/Glyph_Margin/Modifier_01_Margin/Modifier_01/Modifier01Panel" unique_id=664319955]
 layout_mode = 2
@@ -285,6 +291,8 @@ offset_right = -102.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
 
 [node name="Modifier02Label" type="RichTextLabel" parent="GlyphPanel/Glyph_Margin/Modifier_02_Margin/Modifier_02/Modifier02Panel" unique_id=434976773]
 layout_mode = 2
@@ -329,6 +337,8 @@ offset_right = 164.00009
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
 
 [node name="Modifier03Label" type="RichTextLabel" parent="GlyphPanel/Glyph_Margin/Modifier_03_Margin/Modifier_03/Modifier03Panel" unique_id=1215995288]
 layout_mode = 2

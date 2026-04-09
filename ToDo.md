@@ -1,5 +1,4 @@
 QoL
-[] - ReWork Glyph composer
 [] - Option to define "Unknown Phrases"
 [] - List of english definitions of glyphs. On click they bring up the glyph as a popup.
 [] - Colorize Glyph
@@ -25,3 +24,4 @@ DONE
 [x] - Validate and Save Edited Glyphs.
 [x] - App name: BiblaEcystum
 [x] - Display Compound Glyph element definitions.
+[x] - ReWork Glyph composer

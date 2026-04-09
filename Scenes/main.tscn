@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://ddu7jl2vptfvk" path="res://Scripts/menu_control.gd" id="2_kry3j"]
 [ext_resource type="Script" uid="uid://b8xni4ub14heu" path="res://Scripts/glyph_library.gd" id="4_6bp64"]
 [ext_resource type="PackedScene" uid="uid://b3352kavs4j3y" path="res://Scenes/glyph_dictionary.tscn" id="4_21xkr"]
-[ext_resource type="PackedScene" uid="uid://b7b221amwl8rb" path="res://Scenes/glyph_composer.tscn" id="4_kry3j"]
 [ext_resource type="PackedScene" uid="uid://bjraj25yxyxsb" path="res://Scenes/glyph_library.tscn" id="7_6bp64"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_21xkr"]
@@ -91,9 +90,11 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_ynf5e")
 
 [node name="FileMenu" type="PopupMenu" parent="UI_Layer/Control/MainWindow/MenuBar" unique_id=1424356793]
 title = "File"
-item_count = 1
-item_0/text = "Quit"
+item_count = 2
+item_0/text = "New Glyph"
 item_0/id = 0
+item_1/text = "Quit"
+item_1/id = 1
 
 [node name="HelpMenu" type="PopupMenu" parent="UI_Layer/Control/MainWindow/MenuBar" unique_id=1831147073]
 title = "Help"
@@ -114,6 +115,11 @@ theme_override_constants/margin_left = 400
 [node name="HBoxContainer" type="HBoxContainer" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer" unique_id=1302054038]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+
+[node name="TestButton" type="Button" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer" unique_id=181275937]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Test Button"
 
 [node name="CheckButton" type="CheckButton" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer" unique_id=1910160150]
 layout_mode = 2
@@ -185,20 +191,11 @@ metadata/_tab_index = 0
 [node name="Dict_Contents" parent="UI_Layer/Control/MainWindow/DictionaryTab/Dictionary" unique_id=1722322359 instance=ExtResource("4_21xkr")]
 layout_mode = 2
 
-[node name="Composer" type="PanelContainer" parent="UI_Layer/Control/MainWindow/DictionaryTab" unique_id=502381284]
-visible = false
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_kry3j")
-metadata/_tab_index = 1
-
-[node name="Comp_Contents" parent="UI_Layer/Control/MainWindow/DictionaryTab/Composer" unique_id=454392381 instance=ExtResource("4_kry3j")]
-layout_mode = 2
-
 [node name="Library" type="PanelContainer" parent="UI_Layer/Control/MainWindow/DictionaryTab" unique_id=758163340]
 visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_kry3j")
-metadata/_tab_index = 2
+metadata/_tab_index = 1
 
 [node name="Library_Contents" parent="UI_Layer/Control/MainWindow/DictionaryTab/Library" unique_id=509814113 instance=ExtResource("7_6bp64")]
 layout_mode = 2
