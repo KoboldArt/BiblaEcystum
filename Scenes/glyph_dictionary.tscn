@@ -34,6 +34,16 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
+[node name="DisplayBox" type="RichTextLabel" parent="0_InputBox/0_Ib_Contents" unique_id=2073318067]
+custom_minimum_size = Vector2(250, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="SearchFieldContents" type="HBoxContainer" parent="0_InputBox/0_Ib_Contents" unique_id=1162577242]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
@@ -68,22 +78,18 @@ theme_override_constants/separation = 0
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 
-[node name="0_IbC_MidMargin_02" type="MarginContainer" parent="0_InputBox/0_Ib_Contents" unique_id=1899716281]
-visible = false
-custom_minimum_size = Vector2(0, 15)
+[node name="AddUndefinedBtn_Marg" type="MarginContainer" parent="0_InputBox/0_Ib_Contents" unique_id=1899716281]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_bottom = 16
 
-[node name="RefreshLib_Btn" type="Button" parent="0_InputBox/0_Ib_Contents" unique_id=2135240979]
-visible = false
+[node name="AddUndefinedBtn" type="Button" parent="0_InputBox/0_Ib_Contents/AddUndefinedBtn_Marg" unique_id=2135240979]
 custom_minimum_size = Vector2(150, 32)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Refresh Library"
-
-[node name="IbC_BotMargin" type="MarginContainer" parent="0_InputBox/0_Ib_Contents" unique_id=1338288618]
-visible = false
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
+text = "Define Concept"
+metadata/UnknownDefinition = ""
 
 [node name="0_OutputBox" type="PanelContainer" parent="." unique_id=801756518]
 custom_minimum_size = Vector2(600, 500)
@@ -103,16 +109,6 @@ layout_mode = 2
 
 [node name="Glyph_Dict" parent="0_OutputBox/0_Ob_Contents/Glyph_Dict_Display" unique_id=2013700600 instance=ExtResource("2_rs3tl")]
 layout_mode = 1
-
-[node name="DisplayBox" type="RichTextLabel" parent="0_OutputBox/0_Ob_Contents" unique_id=2073318067]
-custom_minimum_size = Vector2(250, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-bbcode_enabled = true
-fit_content = true
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="0_OpC_BotMargin" type="MarginContainer" parent="0_OutputBox/0_Ob_Contents" unique_id=688527732]
 layout_mode = 2

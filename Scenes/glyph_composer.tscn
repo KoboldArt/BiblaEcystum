@@ -109,6 +109,7 @@ layout_mode = 2
 theme_override_constants/margin_bottom = 8
 
 [node name="ID_Contents" type="HBoxContainer" parent="CardPanel/CardContents_Marg/CardContents/ID_Marg" unique_id=1732859180]
+visible = false
 layout_mode = 2
 alignment = 1
 

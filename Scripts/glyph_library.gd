@@ -57,7 +57,7 @@ func add_card(card_info : Dictionary, is_prime : bool) -> void:
 
 
 func setup_card(card : Node, glyph_info : Dictionary, is_prime : bool) -> void:
-	var card_glyph_node = card.find_child("Glyph")
+	#var card_glyph_node = card.find_child("Glyph")
 	var card_descript_box = card.find_child("CardDef_Box")
 	var card_ID_box = card.find_child("ID_Box")
 	var card_glyph = card.find_child("Glyph")
@@ -71,8 +71,9 @@ func setup_card(card : Node, glyph_info : Dictionary, is_prime : bool) -> void:
 		card.glyph_type = card.Type.COMPOUND
 	
 	card_ID_box.text = glyph_info.get("ID")
-	card_glyph_node.set_meta("Glyph_ID", glyph_info.get("ID"))
+	#card_glyph_node.set_meta("Glyph_ID", glyph_info.get("ID"))
 	card_glyph.set_meta("Glyph_ID", glyph_info.get("ID"))
+	card_glyph.is_card = true
 	card_descript_box.text = glyph_info.get("Definitions")
 	
 	#Core.glyph_string = glyph_info.get("ID")

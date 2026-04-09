@@ -1,5 +1,4 @@
 QoL
-[] - Option to define "Unknown Phrases"
 [] - List of english definitions of glyphs. On click they bring up the glyph as a popup.
 [] - Colorize Glyph
 [] - Add new Glyph font.
@@ -25,3 +24,5 @@ DONE
 [x] - App name: BiblaEcystum
 [x] - Display Compound Glyph element definitions.
 [x] - ReWork Glyph composer
+[x] - Option to define "Unknown Phrases"
+[x] - Smart suggestions. Embed glyph ID into the unique suggestion button metadata.

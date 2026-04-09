@@ -110,13 +110,14 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 32.0
 grow_horizontal = 2
-theme_override_constants/margin_left = 400
+theme_override_constants/margin_left = 450
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer" unique_id=1302054038]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 
 [node name="TestButton" type="Button" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer" unique_id=181275937]
+visible = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Test Button"
@@ -125,11 +126,11 @@ text = "Test Button"
 layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer" unique_id=1023457568]
-custom_minimum_size = Vector2(220, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
-text = "Prime Definitions Overlay"
+text = "Prime Overlay"
 vertical_alignment = 1
 
 [node name="FontLabel" type="RichTextLabel" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer" unique_id=1464542588]
@@ -149,27 +150,6 @@ item_count = 2
 popup/item_0/text = "Simple White"
 popup/item_0/id = 0
 popup/item_1/text = "Simple Black"
-popup/item_1/id = 1
-
-[node name="TopMenuBar" type="HBoxContainer" parent="UI_Layer/Control/MainWindow" unique_id=142546908]
-visible = false
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-
-[node name="FileMenu" type="MenuButton" parent="UI_Layer/Control/MainWindow/TopMenuBar" unique_id=1076496316]
-layout_mode = 2
-text = "File"
-item_count = 1
-popup/item_0/text = "Quit"
-popup/item_0/id = 0
-
-[node name="HelpMenu" type="MenuButton" parent="UI_Layer/Control/MainWindow/TopMenuBar" unique_id=727303759]
-layout_mode = 2
-text = "Help"
-item_count = 2
-popup/item_0/text = "Help"
-popup/item_0/id = 0
-popup/item_1/text = "About"
 popup/item_1/id = 1
 
 [node name="DictionaryTab" type="TabContainer" parent="UI_Layer/Control/MainWindow" unique_id=191675090]

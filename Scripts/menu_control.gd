@@ -4,7 +4,7 @@ extends Node
 @onready var menu_bar : MenuBar = main.find_child("MenuBar")
 @onready var file_menu : PopupMenu = menu_bar.find_child("FileMenu")
 
-@onready var test_button : Button = main.find_child("TestButton")
+@onready var add_unknown_btn : Button = main.find_child("AddUndefinedBtn")
 
 var editor_window : Window
 
@@ -14,17 +14,17 @@ var path : String = "res://Scenes/glyph_composer.tscn"
 
 func _ready() -> void:
 	file_menu.index_pressed.connect(file_menu_elements)
-	test_button.pressed.connect(open_subwindow)
+	add_unknown_btn.pressed.connect(add_unknown_concept)
 
 
 func file_menu_elements(index : int) -> void:
 	if index == 0:
-		open_subwindow()
+		open_subwindow("")
 	elif index == 1:
 		get_tree().quit()
 
 
-func open_subwindow() -> void:
+func open_subwindow(pre_define : String) -> void:
 	var window : Window = Window.new()
 	
 	window.set_title("Glyph Editor")
@@ -45,9 +45,13 @@ func open_subwindow() -> void:
 	editor_panel = new_panel.instantiate()
 	
 	window.add_child(editor_panel)
+	editor_panel.definition_box.set_text(pre_define)
 	
-	
+	add_unknown_btn.visible = false
 
+
+func add_unknown_concept() -> void:
+	open_subwindow(add_unknown_btn.get_meta("UnknownDefinition"))
 
 func close_subwindow() -> void:
 	pass
