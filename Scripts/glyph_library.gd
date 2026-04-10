@@ -48,8 +48,9 @@ func add_card(card_info : Dictionary, is_prime : bool) -> void:
 	
 	glyph_card = new_card.instantiate()
 	setup_card(glyph_card, card_info, is_prime)
+
 	library_container.add_child(glyph_card)
-	
+	glyph_card.set_scale(Vector2(0.5, 0.5))
 	if is_prime:
 		prime_cards.append(glyph_card)
 	else:

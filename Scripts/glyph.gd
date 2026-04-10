@@ -6,6 +6,8 @@ extends Node
 @onready var modifier_B_btn : Button = self.find_child("Modifier_B_Button")
 
 ## -Glyph Components- ##
+@onready var border : PanelContainer = self.find_child("GlyphBorder")
+@onready var unknown_pnl : PanelContainer = self.find_child("UnknownPanel")
 
 ## Glyph Display Nodes ##
 @onready var prime_slot : TextureRect = self.find_child("Prime")
@@ -54,6 +56,8 @@ func _ready() -> void:
 	
 	Core.font_changed.connect(_on_new_font_selected)
 	SignalBus.define_overlay_on.connect(display_labels)
+	
+	unknown_pnl.visible = false
 
 
 func update_button_visibility(role : Vector3) -> void:
@@ -67,6 +71,7 @@ func draw_glyph() -> void:
 	separator.set_texture(load(str(Core.cur_font, "Separator-L.png")))
 	
 	self.visible = false
+	unknown_pnl.visible = false
 	separator.visible = false
 	
 	for i in slots.size():
@@ -74,6 +79,7 @@ func draw_glyph() -> void:
 	
 	if glyph_string.substr(0, 2) == "00":
 		self.visible = true
+		unknown_pnl.visible = true
 		display_labels(Core.overlay_on)
 		return
 	elif glyph_string.substr(2, 2) == "00":

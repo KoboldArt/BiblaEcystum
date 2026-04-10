@@ -5,7 +5,6 @@ QoL
 
 Feature
 [] - Export transparent .PNG
-[] - Sentence / Text translate (new tab)
 [] - Font editor (new tab)
 
 Misc.
@@ -26,3 +25,4 @@ DONE
 [x] - ReWork Glyph composer
 [x] - Option to define "Unknown Phrases"
 [x] - Smart suggestions. Embed glyph ID into the unique suggestion button metadata.
+[x] - Sentence / Text translate (new tab)

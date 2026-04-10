@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://br4t3mjyxcp4d"]
+
+[ext_resource type="Script" uid="uid://0hmin8fw8ty3" path="res://Scripts/text_translate_test.gd" id="1_cmtve"]
+[ext_resource type="PackedScene" uid="uid://bpuipjxe5racv" path="res://Scenes/glyph.tscn" id="1_us7t5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmtve"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Control" type="Control" unique_id=1925813225]
+custom_minimum_size = Vector2(1024, 768)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cmtve")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=202106026]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=872243194]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer" unique_id=1157411367]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TextEdit" type="TextEdit" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=2036363009]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+wrap_mode = 1
+
+[node name="Button" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=432525753]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_cmtve")
+text = "SUBMIT"
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer" unique_id=1150358228]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 32
+
+[node name="VFlowContainer" type="VFlowContainer" parent="HBoxContainer/MarginContainer2" unique_id=1838194253]
+layout_mode = 2
+theme_override_constants/v_separation = -24
+
+[node name="Glyph" parent="HBoxContainer/MarginContainer2/VFlowContainer" unique_id=917642904 instance=ExtResource("1_us7t5")]
+visible = false
+layout_mode = 2

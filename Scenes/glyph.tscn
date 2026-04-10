@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://brlonxw3th5e8" path="res://Resources/Symbols/SimpleWhite/Separator-L.png" id="2_l2emf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivvhe"]
+content_margin_left = 2.0
+content_margin_right = 2.0
 bg_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
 border_width_left = 1
 border_width_top = 1
@@ -14,6 +16,8 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u2v7n"]
 
 [sub_resource type="Theme" id="Theme_u2v7n"]
 RichTextLabel/constants/outline_size = 8
@@ -68,7 +72,21 @@ corner_detail = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ivvhe"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gb8vh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u2v7n"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [node name="Glyph" type="Control" unique_id=917642904]
+custom_minimum_size = Vector2(164, 164)
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -84,8 +102,7 @@ grow_vertical = 2
 script = ExtResource("1_u2v7n")
 metadata/Glyph_ID = "000000"
 
-[node name="GlyphPanel" type="PanelContainer" parent="." unique_id=1998698362]
-custom_minimum_size = Vector2(164, 164)
+[node name="GlyphBorder" type="PanelContainer" parent="." unique_id=1396717735]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -93,12 +110,28 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -81.0
-offset_top = -81.0
+offset_top = -82.0
 offset_right = 81.0
-offset_bottom = 81.0
+offset_bottom = 82.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ivvhe")
+metadata/_edit_use_anchors_ = true
+
+[node name="GlyphPanel" type="PanelContainer" parent="." unique_id=1998698362]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -82.0
+offset_right = 81.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u2v7n")
 metadata/_edit_use_anchors_ = true
 
 [node name="Glyph_Margin" type="MarginContainer" parent="GlyphPanel" unique_id=997547172]
@@ -357,16 +390,29 @@ joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="GlyphEdit_Container" type="VBoxContainer" parent="." unique_id=1328565458]
-custom_minimum_size = Vector2(160, 160)
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=972689942]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
 
-[node name="Definer_Button" type="Button" parent="GlyphEdit_Container" unique_id=443786682]
+[node name="GlyphEdit_Container" type="VBoxContainer" parent="MarginContainer" unique_id=1328565458]
+custom_minimum_size = Vector2(158, 160)
+layout_mode = 2
+
+[node name="Definer_Button" type="Button" parent="MarginContainer/GlyphEdit_Container" unique_id=443786682]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_omqt8")
@@ -377,17 +423,17 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_kt1qv")
 text = "Definer"
 metadata/Selected_ID = ""
 
-[node name="HSeparator" type="HSeparator" parent="GlyphEdit_Container" unique_id=2117521443]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/GlyphEdit_Container" unique_id=2117521443]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ivvhe")
 
-[node name="Modifiers" type="HBoxContainer" parent="GlyphEdit_Container" unique_id=2119990166]
+[node name="Modifiers" type="HBoxContainer" parent="MarginContainer/GlyphEdit_Container" unique_id=2119990166]
 layout_mode = 2
 theme_override_constants/separation = 1
 alignment = 1
 
-[node name="Modifier_A_Button" type="Button" parent="GlyphEdit_Container/Modifiers" unique_id=484039408]
+[node name="Modifier_A_Button" type="Button" parent="MarginContainer/GlyphEdit_Container/Modifiers" unique_id=484039408]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 12
@@ -399,7 +445,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_kt1qv")
 text = "Modifier A"
 metadata/Selected_ID = ""
 
-[node name="Modifier_B_Button" type="Button" parent="GlyphEdit_Container/Modifiers" unique_id=1793969937]
+[node name="Modifier_B_Button" type="Button" parent="MarginContainer/GlyphEdit_Container/Modifiers" unique_id=1793969937]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 12
@@ -410,3 +456,27 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_2exri")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kt1qv")
 text = "Modifier B"
 metadata/Selected_ID = ""
+
+[node name="UnknownPanel" type="PanelContainer" parent="." unique_id=1011934777]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -82.0
+offset_right = 81.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gb8vh")
+metadata/_edit_use_anchors_ = true
+
+[node name="Unknown_Btn" type="Button" parent="UnknownPanel" unique_id=1833739359]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_u2v7n")
+text = "Unknown
+Concept"

@@ -44,7 +44,7 @@ corner_radius_bottom_left = 2
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0smi6"]
 
 [node name="GlyphCard" type="Control" unique_id=2135615914]
-custom_minimum_size = Vector2(176, 288)
+custom_minimum_size = Vector2(188, 288)
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
