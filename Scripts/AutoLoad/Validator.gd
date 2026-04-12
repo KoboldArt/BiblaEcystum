@@ -8,13 +8,6 @@ var original_ID : String
 var is_definition_edit : bool = false
 
 
-#func validate_new_entry(new_ID : String, new_define : String) -> bool:
-	#if validate_new_ID(new_ID):
-		#return true
-	#else:
-		#return validate_new_definition(new_define)
-
-
 func validate_new_ID(ID : String, old_ID : String, new_entry : bool) -> bool:
 	if new_entry:
 		old_ID = ""
@@ -104,34 +97,3 @@ func validate_entry(def_pack : Array, ID_pack : Array, database: SQLite, entry_t
 			update_database(CompileText, database, false)
 	
 	return valid_result
-
-
-	
-	
-	
-	
-	
-	
-	
-	#if def_box == "":
-		#feedback_display.text = "[color=red]Definition can't be empty.[/color]"
-		#return false
-	#elif glyph_ID == "000000" or glyph_ID == "" and not is_definition_edit:
-		#feedback_display.text = "[color=red]You need to compose a Glyph first.[/color]"
-		#return false
-	#elif validate_new_entry(glyph_ID, def_box):
-		#feedback_display.text = "[color=red]Concept or Glyph already exists in dictionary.[/color]"
-		#print("Concept or Glyph already exists")
-		#return false
-	#else:
-		#var CompileText = str(glyph_ID, ";", "\"", def_box, "\"", ";", old_ID)
-		#print(CompileText)
-		#var test = CompileText.split(";", true)
-		#print(test)
-		#if new_entry:
-			##update_database(CompileText, database, true)
-			#feedback_display.text = "[color=white]Glyph was added to the dictionary.[/color]"
-		##else:
-			##update_database(CompileText, database, false)
-		#
-		#return true

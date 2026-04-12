@@ -96,6 +96,4 @@ func glyph_selected(ID : String) -> void:
 		source_glyph.set_meta("Glyph_ID", def_str + mod1_str + mod2_str)
 		source_glyph.draw_glyph()
 	
-	#source_glyph.set_meta("Glyph_ID", Core.glyph_string)
-	
 	source_glyph.drop_popup(source_glyph.popup_window)

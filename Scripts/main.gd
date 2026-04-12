@@ -100,18 +100,17 @@ func suggest_search(new_string : String) -> void:
 	var suggested_rows : Array
 	var suggested_rowIDs : Array
 	var suggested_words : Array
+	var suggested_IDs : Array
 	
 	var temp_array = db_suggest(Core.prime_db, new_string, "prime_index")
 	
 	suggested_rowIDs.append_array(temp_array[0])
 	suggested_rows.append_array(temp_array[1])
-	#suggested_rows.append_array(db_suggest(Core.prime_db, new_string, "prime_index")[1])
 	
 	temp_array = db_suggest(Core.comp_db, new_string, "compound_index")
 	
 	suggested_rowIDs.append_array(temp_array[0])
 	suggested_rows.append_array(temp_array[1])
-	#suggested_rows.append_array(db_suggest(Core.comp_db, new_string, "compound_index")[1])
 	
 	for row in suggested_rows.size():
 		var split_row = suggested_rows[row].split(", ", true, 0)
@@ -120,14 +119,18 @@ func suggest_search(new_string : String) -> void:
 		filter.append_array(split_row)
 		for word in filter.size():
 			if filter[word].begins_with(new_string):
-				suggested_words.append(filter[word])
+				suggested_words.append(filter[word] + suggested_rowIDs[row])
 			else:
 				continue
 	
 	suggested_words.sort()
 	
+	for i in suggested_words.size():
+		suggested_IDs.append(suggested_words[i].right(6))
+		suggested_words.set(i, suggested_words[i].rstrip(suggested_IDs[i]))
+	
 	if suggested_words.size() > 0:
-		fill_suggestion_list(suggested_words, suggested_rowIDs)
+		fill_suggestion_list(suggested_words, suggested_IDs)
 		suggestion_scroll.visible = true
 	else:
 		return
@@ -166,7 +169,6 @@ func create_suggestion_button(btn_text : String, btn_meta : String) -> void:
 func suggestion_selected(button : Button) -> void:
 	suggestion_scroll.visible = false
 	search_box.text = button.text
-	#_on_search_button_pressed()
 	
 	dictionary_glyph.set_meta("Glyph_ID", button.get_meta("Glyph_ID"))
 	dictionary_glyph.draw_glyph()
@@ -177,11 +179,8 @@ func suggestion_selected(button : Button) -> void:
 	if search != []:
 		display_box.text = search[0].get("Definitions")
 	else:
-		search = db_search(Core.prime_db, button.get_meta("Glyph_ID"), "compound_index", "ID")
+		search = db_search(Core.comp_db, button.get_meta("Glyph_ID"), "compound_index", "ID")
 		display_box.text = search[0].get("Definitions")
-	
-	
-
 
 
 func _input(event: InputEvent) -> void:
@@ -194,5 +193,5 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
-		SignalBus.emit_signal("define_overlay_on", toggled_on)
+		SignalBus.emit_define_overlay(toggled_on)
 		Core.overlay_on = toggled_on

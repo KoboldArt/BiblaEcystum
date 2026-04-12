@@ -1,0 +1,289 @@
+[gd_scene format=3 uid="uid://d35lduiyne3gc"]
+
+[ext_resource type="Script" uid="uid://bwnug6sho6o0p" path="res://Scripts/subglyph_construct.gd" id="1_hlkxi"]
+
+[sub_resource type="Gradient" id="Gradient_7ujup"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 8
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m75ea"]
+gradient = SubResource("Gradient_7ujup")
+width = 128
+height = 128
+use_hdr = true
+metadata/_snap_enabled = true
+metadata/_snap_count = 8
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jr3bh"]
+gradient = SubResource("Gradient_7ujup")
+width = 128
+height = 128
+use_hdr = true
+fill_to = Vector2(0, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 8
+
+[sub_resource type="Curve" id="Curve_o6cvu"]
+_data = [Vector2(0, 0.07003021), 0.0, 0.28924167, 0, 0, Vector2(0.4137931, 0.31475908), 1.2122186, 1.2122186, 0, 0, Vector2(0.75478923, 0.6671687), -0.21253197, -0.21253197, 0, 0, Vector2(1, 0.36370486), -3.3025663, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xlu36"]
+
+[node name="Control" type="Control" unique_id=222436648]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_hlkxi")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=213716444]
+visible = false
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=786391363]
+visible = false
+modulate = Color(1, 1, 1, 0.19607843)
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("GradientTexture2D_m75ea")
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer" unique_id=1964555966]
+visible = false
+modulate = Color(1, 1, 1, 0.19607843)
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("GradientTexture2D_jr3bh")
+
+[node name="Line2D" type="Line2D" parent="PanelContainer" unique_id=1976665925]
+visible = false
+position = Vector2(0, 44)
+points = PackedVector2Array(12, -25, 17, -24, 24, -23, 35, -22, 44, -20, 52, -17, 58, -13, 62, -10, 67, -5)
+width_curve = SubResource("Curve_o6cvu")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Empty_main" type="Node2D" parent="." unique_id=1982187629]
+position = Vector2(512, 320)
+
+[node name="Empty" type="Line2D" parent="Empty_main" unique_id=485897426]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 0)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Empty_main" unique_id=311683019]
+modulate = Color(1, 1, 1, 0.19607843)
+texture_filter = 1
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = SubResource("GradientTexture2D_m75ea")
+
+[node name="TextureRect4" type="TextureRect" parent="Empty_main" unique_id=1593901514]
+modulate = Color(1, 1, 1, 0.19607843)
+texture_filter = 1
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = SubResource("GradientTexture2D_jr3bh")
+
+[node name="Concepts" type="Node" parent="." unique_id=1576927849]
+
+[node name="Nature_main" type="Node2D" parent="Concepts" unique_id=1408647952]
+visible = false
+position = Vector2(512, 320)
+
+[node name="Nature" type="Line2D" parent="Concepts/Nature_main" unique_id=2074615177]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 128, 64, 0, 128, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Old_Points = PackedVector2Array(0, 128, 64, 0, 128, 128)
+
+[node name="Life_main" type="Node2D" parent="Concepts" unique_id=265395054]
+visible = false
+position = Vector2(512, 320)
+
+[node name="Life" type="Line2D" parent="Concepts/Life_main" unique_id=1207294555]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 0, 128, 0, 128, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Old_Points = PackedVector2Array(0, 0, 128, 0, 128, 128)
+
+[node name="Society_main" type="Node2D" parent="Concepts" unique_id=2043699122]
+visible = false
+position = Vector2(512, 320)
+
+[node name="Society" type="Line2D" parent="Concepts/Society_main" unique_id=226862892]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 0, 128, 0, 128, 128, 0, 128)
+closed = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Old_Points = PackedVector2Array(0, 0, 128, 0, 128, 128, 0, 128)
+
+[node name="Duty_main" type="Node2D" parent="Concepts" unique_id=1566745630]
+visible = false
+position = Vector2(512, 320)
+
+[node name="Duty" type="Line2D" parent="Concepts/Duty_main" unique_id=1627297057]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 0, 128, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Old_Points = PackedVector2Array(0, 0, 128, 128)
+
+[node name="Space_main" type="Node2D" parent="Concepts" unique_id=2118530469]
+visible = false
+position = Vector2(512, 320)
+
+[node name="Space" type="Line2D" parent="Concepts/Space_main" unique_id=544708565]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 0, 128, 0, 128, 128, 0, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Old_Points = PackedVector2Array(0, 0, 128, 0, 128, 128, 0, 128)
+
+[node name="Process" type="Node" parent="." unique_id=1746253066]
+
+[node name="Perception_main" type="Node2D" parent="Process" unique_id=1766803559]
+visible = false
+position = Vector2(512, 320)
+
+[node name="Perception1" type="Line2D" parent="Process/Perception_main" unique_id=1951609401]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 128, 128, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Old_Points = PackedVector2Array(0, 128, 128, 128)
+
+[node name="Recognition_main" type="Node2D" parent="Process" unique_id=710672892]
+visible = false
+position = Vector2(512, 320)
+
+[node name="Recognition1" type="Line2D" parent="Process/Recognition_main" unique_id=1028947089]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 128, 128, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Old_Points = PackedVector2Array(0, 128, 128, 128)
+
+[node name="Recognition2" type="Line2D" parent="Process/Recognition_main" unique_id=249445700]
+position = Vector2(-64, -64)
+points = PackedVector2Array(32, 48, 96, 48)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Old_Points = PackedVector2Array(32, 48, 96, 48)
+metadata/NatSo_Points = PackedVector2Array(0, 48, 64, 48)
+metadata/NatSc_Points = PackedVector2Array(64, 48, 128, 48)
+metadata/Dut_Points = PackedVector2Array(0, 64, 128, 64)
+
+[node name="Record_main" type="Node2D" parent="Process" unique_id=1853276755]
+visible = false
+position = Vector2(512, 320)
+
+[node name="Record1" type="Line2D" parent="Process/Record_main" unique_id=790508794]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 128, 64, 128, 64, 0, 64, 128, 128, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Old_Points = PackedVector2Array(0, 128, 64, 128, 64, 0, 64, 128, 128, 128)
+
+[node name="Command_main" type="Node2D" parent="Process" unique_id=471583143]
+visible = false
+position = Vector2(512, 320)
+
+[node name="Command1" type="Line2D" parent="Process/Command_main" unique_id=1318594077]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 0)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Command2" type="Line2D" parent="Process/Command_main" unique_id=365834869]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 48, 64, 48, 64, 128, 64, 48, 128, 48)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Old_Points = PackedVector2Array(0, 48, 64, 48, 64, 128, 64, 48, 128, 48)
+metadata/Dut_Points = PackedVector2Array(0, 64, 64, 64, 64, 128, 64, 64, 128, 64)
+
+[node name="Action_main" type="Node2D" parent="Process" unique_id=2072059768]
+visible = false
+position = Vector2(512, 320)
+
+[node name="Action1" type="Line2D" parent="Process/Action_main" unique_id=937772201]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 128, 64, 128, 64, 0, 64, 128, 128, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Old_Points = PackedVector2Array(0, 128, 64, 128, 64, 0, 64, 128, 128, 128)
+
+[node name="Action2" type="Line2D" parent="Process/Action_main" unique_id=1631893979]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 48, 128, 48)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Old_Points = PackedVector2Array(0, 48, 128, 48)
+metadata/Dut_Points = PackedVector2Array(0, 64, 128, 64)
+
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=247313658]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xlu36")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2" unique_id=850166988]
+layout_mode = 2
+theme_override_constants/margin_left = 475
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 475
+theme_override_constants/margin_bottom = 150
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer2/MarginContainer" unique_id=1377665604]
+layout_mode = 2
+alignment = 1
+keep_editing_on_text_submit = true
+
+[connection signal="text_submitted" from="PanelContainer2/MarginContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]

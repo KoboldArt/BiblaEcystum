@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://br4t3mjyxcp4d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmtve"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="glyph_text_export" type="HBoxContainer" unique_id=202106026]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextInput_Marg" type="MarginContainer" parent="." unique_id=872243194]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 32
+
+[node name="TextInput_Container" type="VBoxContainer" parent="TextInput_Marg" unique_id=1157411367]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TextBlock" type="TextEdit" parent="TextInput_Marg/TextInput_Container" unique_id=2036363009]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+wrap_mode = 1
+
+[node name="Submit_Btn" type="Button" parent="TextInput_Marg/TextInput_Container" unique_id=432525753]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_cmtve")
+text = "SUBMIT"
+
+[node name="Export_Btn" type="Button" parent="TextInput_Marg/TextInput_Container" unique_id=1962296498]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_cmtve")
+text = "EXPORT"
+
+[node name="GlyphOutput_Container" type="MarginContainer" parent="." unique_id=1150358228]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 32
+
+[node name="Canvas_Container" type="SubViewportContainer" parent="GlyphOutput_Container" unique_id=1063990828]
+layout_mode = 2
+
+[node name="Canvas" type="SubViewport" parent="GlyphOutput_Container/Canvas_Container" unique_id=1554947333]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(512, 620)
+render_target_update_mode = 4
+
+[node name="Blackboard_Scroll" type="ScrollContainer" parent="GlyphOutput_Container/Canvas_Container/Canvas" unique_id=1319776841]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Blackboard_Marg" type="MarginContainer" parent="GlyphOutput_Container/Canvas_Container/Canvas/Blackboard_Scroll" unique_id=1851835613]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Blackboard" type="VFlowContainer" parent="GlyphOutput_Container/Canvas_Container/Canvas/Blackboard_Scroll/Blackboard_Marg" unique_id=1838194253]
+layout_mode = 2
+theme_override_constants/v_separation = -24

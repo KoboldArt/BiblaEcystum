@@ -51,7 +51,6 @@ func _ready() -> void:
 	slots = [prime_slot, define_slot, mod_1_slot, mod_2_slot, mod_3_slot]
 	labels = [prime_label, define_label, mod_1_label, mod_2_label, mod_3_label]
 	
-	#Core.glyph_string = self.get_meta("Glyph_ID")
 	draw_glyph()
 	
 	Core.font_changed.connect(_on_new_font_selected)
