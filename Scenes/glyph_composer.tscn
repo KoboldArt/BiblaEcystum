@@ -55,7 +55,7 @@ grow_vertical = 2
 script = ExtResource("1_7vbip")
 
 [node name="CardPanel" type="PanelContainer" parent="." unique_id=423630414]
-custom_minimum_size = Vector2(470, 420)
+custom_minimum_size = Vector2(470, 470)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

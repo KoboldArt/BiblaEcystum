@@ -3,7 +3,7 @@ extends Node
 @onready var main : Node = self.get_parent()
 @onready var menu_bar : MenuBar = main.find_child("MenuBar")
 @onready var file_menu : PopupMenu = menu_bar.find_child("FileMenu")
-@onready var export_control : Node = main.find_child("TextExport_Control")
+@onready var blackboard : Node = main.find_child("Blackboard_Control")
 @onready var add_unknown_btn : Button = main.find_child("AddUndefinedBtn")
 
 var editor_window : Window
@@ -21,7 +21,7 @@ func file_menu_elements(index : int) -> void:
 	if index == 0:
 		open_subwindow("")
 	elif index == 1:
-		export_control.export_glyph_to_png()
+		blackboard.export_glyph_to_png()
 	elif index == 2:
 		pass
 	elif index == 3:

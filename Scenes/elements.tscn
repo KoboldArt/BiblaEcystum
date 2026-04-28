@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://bxdff6bq85jf5"]
+
+[node name="Elements" type="Node2D" unique_id=1381780833]
+
+[node name="Concepts" type="Node2D" parent="." unique_id=1308052254]
+position = Vector2(64, 64)
+scale = Vector2(0.8, 0.8)
+
+[node name="Nature_main" type="Node2D" parent="Concepts" unique_id=625791630]
+
+[node name="Nature" type="Line2D" parent="Concepts/Nature_main" unique_id=1730791836]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 128, 64, 0, 128, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Base = PackedVector2Array(0, 128, 64, 0, 128, 128)
+
+[node name="Life_main" type="Node2D" parent="Concepts" unique_id=2067568014]
+
+[node name="Life" type="Line2D" parent="Concepts/Life_main" unique_id=1276671036]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 0, 128, 0, 128, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Base = PackedVector2Array(0, 0, 128, 0, 128, 128)
+
+[node name="Society_main" type="Node2D" parent="Concepts" unique_id=345163298]
+visible = false
+
+[node name="Society" type="Line2D" parent="Concepts/Society_main" unique_id=1420735146]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 0, 128, 0, 128, 128, 0, 128)
+closed = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Base = PackedVector2Array(0, 0, 128, 0, 128, 128, 0, 128)
+
+[node name="Duty_main" type="Node2D" parent="Concepts" unique_id=1000463091]
+visible = false
+
+[node name="Duty" type="Line2D" parent="Concepts/Duty_main" unique_id=826903960]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 0, 128, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Base = PackedVector2Array(0, 0, 128, 128)
+
+[node name="Space_main" type="Node2D" parent="Concepts" unique_id=1804000016]
+visible = false
+
+[node name="Space" type="Line2D" parent="Concepts/Space_main" unique_id=204985527]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 0, 128, 0, 128, 128, 0, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Base = PackedVector2Array(0, 0, 128, 0, 128, 128, 0, 128)
+
+[node name="Process" type="Node2D" parent="." unique_id=421044890]
+position = Vector2(64, 64)
+scale = Vector2(0.8, 0.8)
+
+[node name="Perception_main" type="Node2D" parent="Process" unique_id=318801664]
+
+[node name="Perception" type="Line2D" parent="Process/Perception_main" unique_id=743172047]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 128, 128, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Base = PackedVector2Array(0, 128, 128, 128)
+
+[node name="Recognition_main" type="Node2D" parent="Process" unique_id=369416798]
+
+[node name="Recognition1" type="Line2D" parent="Process/Recognition_main" unique_id=1757146722]
+visible = false
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 128, 128, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Base = PackedVector2Array(0, 128, 128, 128)
+
+[node name="Recognition2" type="Line2D" parent="Process/Recognition_main" unique_id=888664020]
+visible = false
+position = Vector2(-64, -64)
+points = PackedVector2Array(32, 64, 96, 64)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Base = PackedVector2Array(32, 48, 96, 48)
+metadata/v122 = PackedVector2Array(0, 48, 64, 48)
+metadata/v123 = PackedVector2Array(64, 48, 128, 48)
+metadata/v121H = PackedVector2Array(40, 80, 88, 80)
+metadata/v121 = PackedVector2Array(32, 64, 96, 64)
+metadata/v124H = PackedVector2Array(40, 32, 88, 32)
+metadata/v223H = PackedVector2Array(0, 48, 96, 48)
+metadata/v221H = PackedVector2Array(32, 64, 96, 64)
+metadata/v420 = PackedVector2Array(0, 64, 128, 64)
+
+[node name="Record_main" type="Node2D" parent="Process" unique_id=1272967153]
+
+[node name="Record1" type="Line2D" parent="Process/Record_main" unique_id=375672013]
+visible = false
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 128, 128, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Base = PackedVector2Array(0, 128, 128, 128)
+
+[node name="Record2" type="Line2D" parent="Process/Record_main" unique_id=1526256394]
+visible = false
+position = Vector2(-64, -64)
+points = PackedVector2Array(64, 0, 64, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Base = PackedVector2Array(64, 0, 64, 128)
+
+[node name="Command_main" type="Node2D" parent="Process" unique_id=399208197]
+
+[node name="Command1" type="Line2D" parent="Process/Command_main" unique_id=1897170659]
+visible = false
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 48, 128, 48)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Base = PackedVector2Array(0, 48, 128, 48)
+metadata/v440 = PackedVector2Array(0, 64, 128, 64)
+
+[node name="Command2" type="Line2D" parent="Process/Command_main" unique_id=1304117907]
+visible = false
+position = Vector2(-64, -64)
+points = PackedVector2Array(64, 128, 64, 48)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Base = PackedVector2Array(64, 128, 64, 48)
+metadata/v440 = PackedVector2Array(64, 128, 64, 64)
+
+[node name="Action_main" type="Node2D" parent="Process" unique_id=1524410237]
+
+[node name="Action1" type="Line2D" parent="Process/Action_main" unique_id=1359059348]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 128, 128, 128)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Base = PackedVector2Array(0, 128, 128, 128)
+
+[node name="Action2" type="Line2D" parent="Process/Action_main" unique_id=1540137890]
+position = Vector2(-64, -64)
+points = PackedVector2Array(64, 128, 64, 0)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Base = PackedVector2Array(64, 128, 64, 0)
+
+[node name="Action3" type="Line2D" parent="Process/Action_main" unique_id=818111810]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 48, 128, 48)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Base = PackedVector2Array(0, 48, 128, 48)
+metadata/v251H = PackedVector2Array(32, 64, 96, 64)
+metadata/v450 = PackedVector2Array(0, 64, 128, 64)
+
+[node name="Empty_main" type="Node2D" parent="." unique_id=1397538237]
+position = Vector2(64, 64)
+
+[node name="Empty" type="Line2D" parent="Empty_main" unique_id=1164522091]
+position = Vector2(-64, -64)
+points = PackedVector2Array(0, 0)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Old_Points = PackedVector2Array(0, 0)
+
+[node name="Separator_main" type="Node2D" parent="." unique_id=1171648935]
+visible = false
+position = Vector2(64, 64)
+scale = Vector2(0.8, 0.8)
+
+[node name="Separator" type="Line2D" parent="Separator_main" unique_id=1712100446]
+position = Vector2(-64, -64)
+points = PackedVector2Array(-8, 64, 136, 64)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+metadata/Base = PackedVector2Array(0, 128, 128, 128)

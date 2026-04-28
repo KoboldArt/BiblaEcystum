@@ -1,99 +1,92 @@
-[gd_scene format=3 uid="uid://dqm1onp41yhwr"]
+[gd_scene format=3 uid="uid://5ibdob3sxfuo"]
 
-[ext_resource type="Script" uid="uid://bqhtvotxdgary" path="res://Scripts/main.gd" id="1_jjgbg"]
-[ext_resource type="Script" uid="uid://ddu7jl2vptfvk" path="res://Scripts/menu_control.gd" id="2_kry3j"]
-[ext_resource type="Script" uid="uid://b8xni4ub14heu" path="res://Scripts/glyph_library.gd" id="4_6bp64"]
-[ext_resource type="PackedScene" uid="uid://b3352kavs4j3y" path="res://Scenes/glyph_dictionary.tscn" id="4_21xkr"]
-[ext_resource type="Script" uid="uid://0hmin8fw8ty3" path="res://Scripts/glyph_text_export.gd" id="4_344ge"]
-[ext_resource type="PackedScene" uid="uid://bjraj25yxyxsb" path="res://Scenes/glyph_library.tscn" id="7_6bp64"]
-[ext_resource type="PackedScene" uid="uid://br4t3mjyxcp4d" path="res://Scenes/glyph_text_export.tscn" id="7_344ge"]
+[ext_resource type="Script" uid="uid://ddu7jl2vptfvk" path="res://Scripts/menu_control.gd" id="1_8mgup"]
+[ext_resource type="Script" uid="uid://b8xni4ub14heu" path="res://Scripts/glyph_library.gd" id="1_cserr"]
+[ext_resource type="Script" uid="uid://bqhtvotxdgary" path="res://Scripts/main.gd" id="1_qtoii"]
+[ext_resource type="Script" uid="uid://0hmin8fw8ty3" path="res://Scripts/glyph_text_export.gd" id="2_tarms"]
+[ext_resource type="PackedScene" uid="uid://b7b221amwl8rb" path="res://Scenes/glyph_composer.tscn" id="5_kry3j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_21xkr"]
 content_margin_left = 16.0
 content_margin_top = 4.0
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6bp64"]
-content_margin_left = 16.0
-content_margin_top = 4.0
+[sub_resource type="DPITexture" id="DPITexture_jjvhh"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_344ge"]
-content_margin_left = 16.0
-content_margin_top = 4.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ynf5e"]
-content_margin_left = 16.0
-content_margin_top = 4.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjvhh"]
+[sub_resource type="DPITexture" id="DPITexture_kry3j"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjvhh"]
-content_margin_top = 5.0
-bg_color = Color(0.14767182, 0.14767182, 0.14767176, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kry3j"]
-content_margin_left = 15.0
-content_margin_right = 15.0
-bg_color = Color(0.20871013, 0.20871016, 0.20871004, 1)
+bg_color = Color(0.41598046, 0.41598046, 0.41598028, 1)
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0.2509804)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bp64"]
-content_margin_left = 15.0
-content_margin_right = 15.0
-bg_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
-border_width_left = 2
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mjre"]
+bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ywye"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+border_width_left = 1
 border_width_top = 2
-border_width_right = 2
-corner_radius_top_left = 4
-corner_radius_top_right = 4
+border_width_right = 1
+border_color = Color(0.0007324241, 0.0007324241, 0.0007324241, 0.5058824)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21xkr"]
-content_margin_left = 15.0
-content_margin_right = 15.0
-bg_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
+[node name="Node" type="Node" unique_id=1037921264]
+script = ExtResource("1_qtoii")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kry3j"]
+[node name="Menu_Control" type="Node" parent="." unique_id=985072466]
+script = ExtResource("1_8mgup")
 
-[node name="main" type="Node2D" unique_id=451110635]
-script = ExtResource("1_jjgbg")
+[node name="Library_Control" type="Node" parent="." unique_id=1346220829]
+script = ExtResource("1_cserr")
 
-[node name="Menu_Control" type="Node" parent="." unique_id=594471207]
-script = ExtResource("2_kry3j")
+[node name="Blackboard_Control" type="Node" parent="." unique_id=442949012]
+script = ExtResource("2_tarms")
 
-[node name="Library_Control" type="Node" parent="." unique_id=960952396]
-script = ExtResource("4_6bp64")
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=869132538]
 
-[node name="TextExport_Control" type="Node" parent="." unique_id=1133248257]
-script = ExtResource("4_344ge")
-
-[node name="UI_Layer" type="CanvasLayer" parent="." unique_id=833846491]
-
-[node name="Control" type="Control" parent="UI_Layer" unique_id=431592528]
+[node name="TopBar" type="Control" parent="CanvasLayer" unique_id=2017577354]
+custom_minimum_size = Vector2(0, 84)
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 2
 
-[node name="MainWindow" type="VBoxContainer" parent="UI_Layer/Control" unique_id=588576530]
+[node name="MainWindow" type="VBoxContainer" parent="CanvasLayer/TopBar" unique_id=681290455]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
-[node name="MenuBar" type="MenuBar" parent="UI_Layer/Control/MainWindow" unique_id=724147197]
+[node name="MenuBar_Container" type="MarginContainer" parent="CanvasLayer/TopBar/MainWindow" unique_id=520555893]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="MenuBar" type="MenuBar" parent="CanvasLayer/TopBar/MainWindow/MenuBar_Container" unique_id=848499848]
+custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_21xkr")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_6bp64")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_344ge")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_ynf5e")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_21xkr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_21xkr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_21xkr")
 
-[node name="FileMenu" type="PopupMenu" parent="UI_Layer/Control/MainWindow/MenuBar" unique_id=1424356793]
+[node name="FileMenu" type="PopupMenu" parent="CanvasLayer/TopBar/MainWindow/MenuBar_Container/MenuBar" unique_id=1098707372]
 title = "File"
 item_count = 5
 item_0/text = "New Glyph"
@@ -107,7 +100,7 @@ item_3/separator = true
 item_4/text = "Quit"
 item_4/id = 3
 
-[node name="HelpMenu" type="PopupMenu" parent="UI_Layer/Control/MainWindow/MenuBar" unique_id=1831147073]
+[node name="HelpMenu" type="PopupMenu" parent="CanvasLayer/TopBar/MainWindow/MenuBar_Container/MenuBar" unique_id=969944877]
 title = "Help"
 item_count = 2
 item_0/text = "Help"
@@ -115,94 +108,562 @@ item_0/id = 0
 item_1/text = "About"
 item_1/id = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="UI_Layer/Control/MainWindow/MenuBar" unique_id=989491442]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 32.0
-grow_horizontal = 2
-theme_override_constants/margin_left = 450
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer" unique_id=1302054038]
-custom_minimum_size = Vector2(250, 0)
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/TopBar/MainWindow" unique_id=66194809]
 layout_mode = 2
 
-[node name="TestButton" type="Button" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer" unique_id=181275937]
-visible = false
-custom_minimum_size = Vector2(100, 0)
+[node name="OptionsBar_Container" type="MarginContainer" parent="CanvasLayer/TopBar/MainWindow" unique_id=483210043]
 layout_mode = 2
-text = "Test Button"
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 4
 
-[node name="CheckButton" type="CheckButton" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer" unique_id=1910160150]
+[node name="OptionsBar_Contents" type="HBoxContainer" parent="CanvasLayer/TopBar/MainWindow/OptionsBar_Container" unique_id=19484839]
 layout_mode = 2
+theme_override_constants/separation = 8
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer" unique_id=1023457568]
-custom_minimum_size = Vector2(150, 0)
+[node name="FontLabel" type="RichTextLabel" parent="CanvasLayer/TopBar/MainWindow/OptionsBar_Container/OptionsBar_Contents" unique_id=1297108870]
+custom_minimum_size = Vector2(45, 0)
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
-text = "Prime Overlay"
-vertical_alignment = 1
-
-[node name="FontLabel" type="RichTextLabel" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer" unique_id=1464542588]
-custom_minimum_size = Vector2(50, 32)
-layout_mode = 2
-size_flags_vertical = 0
-text = "Font:"
+text = "Font"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="FontSelector" type="OptionButton" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer" unique_id=629270832]
-custom_minimum_size = Vector2(120, 32)
+[node name="FontSelector" type="OptionButton" parent="CanvasLayer/TopBar/MainWindow/OptionsBar_Container/OptionsBar_Contents" unique_id=1755350964]
+custom_minimum_size = Vector2(200, 32)
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
 selected = 0
 item_count = 2
-popup/item_0/text = "Simple White"
+popup/item_0/text = "Flat"
 popup/item_0/id = 0
-popup/item_1/text = "Simple Black"
+popup/item_1/text = "Round"
 popup/item_1/id = 1
 
-[node name="DictionaryTab" type="TabContainer" parent="UI_Layer/Control/MainWindow" unique_id=191675090]
+[node name="ColorLabel" type="RichTextLabel" parent="CanvasLayer/TopBar/MainWindow/OptionsBar_Container/OptionsBar_Contents" unique_id=179089288]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "Color"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ColorPicker" type="ColorPickerButton" parent="CanvasLayer/TopBar/MainWindow/OptionsBar_Container/OptionsBar_Contents" unique_id=1563003589]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(1, 1, 1, 1)
+
+[node name="ThicknessLabel" type="RichTextLabel" parent="CanvasLayer/TopBar/MainWindow/OptionsBar_Container/OptionsBar_Contents" unique_id=1753699366]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "Size"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ThicknessBox" type="SpinBox" parent="CanvasLayer/TopBar/MainWindow/OptionsBar_Container/OptionsBar_Contents" unique_id=1110288812]
+layout_mode = 2
+min_value = 10.0
+max_value = 30.0
+value = 15.0
+alignment = 1
+update_on_text_changed = true
+
+[node name="OverlayLabel" type="RichTextLabel" parent="CanvasLayer/TopBar/MainWindow/OptionsBar_Container/OptionsBar_Contents" unique_id=1970435047]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "Overlay"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer/TopBar/MainWindow/OptionsBar_Container/OptionsBar_Contents" unique_id=1055678241]
+layout_mode = 2
+
+[node name="OptionsBar_RightM" type="MarginContainer" parent="CanvasLayer/TopBar/MainWindow/OptionsBar_Container/OptionsBar_Contents" unique_id=1415415131]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/TopBar/MainWindow" unique_id=459995575]
+layout_mode = 2
+
+[node name="LeftSide_Bot" type="Control" parent="CanvasLayer" unique_id=943760670]
+custom_minimum_size = Vector2(680, 0)
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 300.0
+offset_right = 680.0
+offset_bottom = -44.0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/LeftSide_Bot" unique_id=256035250]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LeftSide_Bot/MarginContainer" unique_id=554263708]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/LeftSide_Bot/MarginContainer/VBoxContainer" unique_id=506582438]
+layout_mode = 2
+alignment = 2
+
+[node name="Add2Blackboard" type="RichTextLabel" parent="CanvasLayer/LeftSide_Bot/MarginContainer/VBoxContainer/HBoxContainer" unique_id=65934375]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Add to Blackboard"
+horizontal_alignment = 2
+
+[node name="OperatorBtn" type="CheckButton" parent="CanvasLayer/LeftSide_Bot/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1368923872]
+layout_mode = 2
+theme_override_icons/checked = SubResource("DPITexture_jjvhh")
+theme_override_icons/checked_mirrored = SubResource("DPITexture_kry3j")
+
+[node name="Edit1Glyph" type="RichTextLabel" parent="CanvasLayer/LeftSide_Bot/MarginContainer/VBoxContainer/HBoxContainer" unique_id=92791090]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Edit Glyph"
+
+[node name="LibraryPanel" type="PanelContainer" parent="CanvasLayer/LeftSide_Bot/MarginContainer/VBoxContainer" unique_id=651090681]
+show_behind_parent = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/tab_separation = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_jjvhh")
-theme_override_styles/tabbar_background = SubResource("StyleBoxFlat_jjvhh")
-theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_kry3j")
-theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_6bp64")
-theme_override_styles/tab_selected = SubResource("StyleBoxFlat_21xkr")
-current_tab = 0
 
-[node name="Dictionary" type="PanelContainer" parent="UI_Layer/Control/MainWindow/DictionaryTab" unique_id=362691492]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_kry3j")
-metadata/_tab_index = 0
-
-[node name="Dict_Contents" parent="UI_Layer/Control/MainWindow/DictionaryTab/Dictionary" unique_id=1722322359 instance=ExtResource("4_21xkr")]
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/LeftSide_Bot/MarginContainer/VBoxContainer/LibraryPanel" unique_id=1591081841]
 layout_mode = 2
 
-[node name="Library" type="PanelContainer" parent="UI_Layer/Control/MainWindow/DictionaryTab" unique_id=758163340]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/LeftSide_Bot/MarginContainer/VBoxContainer/LibraryPanel/ScrollContainer" unique_id=1246537451]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="UndefinedGlyphContainer" type="MarginContainer" parent="CanvasLayer/LeftSide_Bot/MarginContainer/VBoxContainer/LibraryPanel/ScrollContainer/MarginContainer" unique_id=617993668]
+visible = false
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 16
+
+[node name="UndefinedGlyphContents" type="VBoxContainer" parent="CanvasLayer/LeftSide_Bot/MarginContainer/VBoxContainer/LibraryPanel/ScrollContainer/MarginContainer/UndefinedGlyphContainer" unique_id=596894028]
+layout_mode = 2
+
+[node name="DisplayBox" type="RichTextLabel" parent="CanvasLayer/LeftSide_Bot/MarginContainer/VBoxContainer/LibraryPanel/ScrollContainer/MarginContainer/UndefinedGlyphContainer/UndefinedGlyphContents" unique_id=715869488]
+custom_minimum_size = Vector2(250, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AddUndefinedBtn" type="Button" parent="CanvasLayer/LeftSide_Bot/MarginContainer/VBoxContainer/LibraryPanel/ScrollContainer/MarginContainer/UndefinedGlyphContainer/UndefinedGlyphContents" unique_id=178337524]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Define Concept"
+metadata/UnknownDefinition = ""
+
+[node name="CardsLibrary" type="HFlowContainer" parent="CanvasLayer/LeftSide_Bot/MarginContainer/VBoxContainer/LibraryPanel/ScrollContainer/MarginContainer" unique_id=1277096378]
+clip_contents = true
+layout_mode = 2
+
+[node name="WordsLibrary" type="VFlowContainer" parent="CanvasLayer/LeftSide_Bot/MarginContainer/VBoxContainer/LibraryPanel/ScrollContainer/MarginContainer" unique_id=1230389420]
+visible = false
+clip_contents = true
+layout_mode = 2
+theme_override_constants/h_separation = 8
+
+[node name="LeftSide_Top" type="Control" parent="CanvasLayer" unique_id=964521403]
+custom_minimum_size = Vector2(680, 332)
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 100.0
+offset_right = 580.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/LeftSide_Top" unique_id=1486819415]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer" unique_id=1870589318]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="LibraryLabel_Contents" type="HBoxContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer" unique_id=1675608940]
 visible = false
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_kry3j")
-metadata/_tab_index = 1
 
-[node name="Library_Contents" parent="UI_Layer/Control/MainWindow/DictionaryTab/Library" unique_id=509814113 instance=ExtResource("7_6bp64")]
+[node name="HSeparator6" type="HSeparator" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/LibraryLabel_Contents" unique_id=2065094651]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LibraryLabel" type="RichTextLabel" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/LibraryLabel_Contents" unique_id=1479414545]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "LIBRARY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator5" type="HSeparator" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/LibraryLabel_Contents" unique_id=212753879]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Filters_Container" type="MarginContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer" unique_id=633527984]
+z_index = 1
+layout_mode = 2
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container" unique_id=987897630]
 layout_mode = 2
 
-[node name="TextExport" type="PanelContainer" parent="UI_Layer/Control/MainWindow/DictionaryTab" unique_id=1631138650]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer" unique_id=1561091801]
+layout_mode = 2
+
+[node name="ShowGlyphs" type="RichTextLabel" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer2" unique_id=1222725664]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+text = "GLYPHS"
+horizontal_alignment = 2
+
+[node name="ToggleLibraryView" type="CheckButton" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer2" unique_id=1907112512]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_icons/checked = SubResource("DPITexture_jjvhh")
+theme_override_icons/checked_mirrored = SubResource("DPITexture_kry3j")
+
+[node name="ShowDefinitions" type="RichTextLabel" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer2" unique_id=1192609420]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+text = "DEFINITIONS"
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer" unique_id=1144037363]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer" unique_id=242949900]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6" unique_id=925211153]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ShowAll" type="CheckBox" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6/VBoxContainer" unique_id=1785922799]
+layout_mode = 2
+button_pressed = true
+text = "Show All"
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6" unique_id=1178165728]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6" unique_id=623315424]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="MarginContainer4" type="PanelContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6/VBoxContainer3" unique_id=2003364922]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jjvhh")
+
+[node name="TypesOfGlyph" type="MenuButton" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6/VBoxContainer3/MarginContainer4" unique_id=276835136]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Types of Glyph"
+item_count = 2
+popup/item_0/text = "Prime"
+popup/item_0/checkable = 1
+popup/item_0/checked = true
+popup/item_0/id = 0
+popup/item_1/text = "Compound"
+popup/item_1/checkable = 1
+popup/item_1/checked = true
+popup/item_1/id = 1
+
+[node name="MarginContainer" type="PanelContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6/VBoxContainer3" unique_id=119917276]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jjvhh")
+
+[node name="AreasOfConcept" type="MenuButton" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6/VBoxContainer3/MarginContainer" unique_id=1343096108]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Areas of Concept"
+item_count = 5
+popup/item_0/text = "Nature"
+popup/item_0/checkable = 1
+popup/item_0/checked = true
+popup/item_0/id = 0
+popup/item_1/text = "Life"
+popup/item_1/checkable = 1
+popup/item_1/checked = true
+popup/item_1/id = 1
+popup/item_2/text = "Society"
+popup/item_2/checkable = 1
+popup/item_2/checked = true
+popup/item_2/id = 2
+popup/item_3/text = "Duty"
+popup/item_3/checkable = 1
+popup/item_3/checked = true
+popup/item_3/id = 3
+popup/item_4/text = "Space"
+popup/item_4/checkable = 1
+popup/item_4/checked = true
+popup/item_4/id = 4
+
+[node name="MarginContainer2" type="PanelContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6/VBoxContainer3" unique_id=541101959]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jjvhh")
+
+[node name="StagesOfProcessing" type="MenuButton" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6/VBoxContainer3/MarginContainer2" unique_id=1476495991]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Stages of Processing"
+item_count = 5
+popup/item_0/text = "Perception"
+popup/item_0/checkable = 1
+popup/item_0/checked = true
+popup/item_0/id = 0
+popup/item_1/text = "Recognition"
+popup/item_1/checkable = 1
+popup/item_1/checked = true
+popup/item_1/id = 1
+popup/item_2/text = "Record"
+popup/item_2/checkable = 1
+popup/item_2/checked = true
+popup/item_2/id = 2
+popup/item_3/text = "Command"
+popup/item_3/checkable = 1
+popup/item_3/checked = true
+popup/item_3/id = 3
+popup/item_4/text = "Action"
+popup/item_4/checkable = 1
+popup/item_4/checked = true
+popup/item_4/id = 4
+
+[node name="MarginContainer3" type="PanelContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6/VBoxContainer3" unique_id=54161037]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jjvhh")
+
+[node name="CastesOfTheHive" type="MenuButton" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6/VBoxContainer3/MarginContainer3" unique_id=59299176]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Castes of the Hive"
+item_count = 4
+popup/item_0/text = "Worker"
+popup/item_0/checkable = 1
+popup/item_0/checked = true
+popup/item_0/id = 0
+popup/item_1/text = "Soldier"
+popup/item_1/checkable = 1
+popup/item_1/checked = true
+popup/item_1/id = 1
+popup/item_2/text = "Scholar"
+popup/item_2/checkable = 1
+popup/item_2/checked = true
+popup/item_2/id = 2
+popup/item_3/text = "Priest"
+popup/item_3/checkable = 1
+popup/item_3/checked = true
+popup/item_3/id = 3
+
+[node name="VSeparator2" type="VSeparator" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6" unique_id=611286511]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6" unique_id=529151005]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="SearchFieldContents" type="HBoxContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6/VBoxContainer2" unique_id=1070562896]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+alignment = 1
+
+[node name="SearchBox" type="LineEdit" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6/VBoxContainer2/SearchFieldContents" unique_id=702894250]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+focus_behavior_recursive = 2
+theme_override_font_sizes/font_size = 16
+
+[node name="SearchButton" type="Button" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6/VBoxContainer2/SearchFieldContents" unique_id=1509861344]
+custom_minimum_size = Vector2(40, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "🔎"
+
+[node name="SuggestionsContents" type="HBoxContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6/VBoxContainer2" unique_id=974737158]
+z_index = 5
+layout_mode = 2
+alignment = 1
+
+[node name="SC_RightMargin" type="MarginContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6/VBoxContainer2/SuggestionsContents" unique_id=438037931]
+custom_minimum_size = Vector2(194, 0)
+layout_mode = 2
+theme_override_constants/margin_right = 44
+
+[node name="SuggestionScroll" type="ScrollContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6/VBoxContainer2/SuggestionsContents/SC_RightMargin" unique_id=1606715830]
 visible = false
+clip_contents = false
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_kry3j")
-metadata/_tab_index = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0mjre")
 
-[node name="TextExport_Contents" parent="UI_Layer/Control/MainWindow/DictionaryTab/TextExport" unique_id=202106026 instance=ExtResource("7_344ge")]
+[node name="SuggestionList" type="VBoxContainer" parent="CanvasLayer/LeftSide_Top/MarginContainer/VBoxContainer/Filters_Container/VBoxContainer/HBoxContainer6/VBoxContainer2/SuggestionsContents/SC_RightMargin/SuggestionScroll" unique_id=104634789]
+z_index = 5
+y_sort_enabled = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="RightSide" type="Control" parent="CanvasLayer" unique_id=505173277]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 680.0
+offset_top = 100.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Blackboard_Container" type="MarginContainer" parent="CanvasLayer/RightSide" unique_id=1088250416]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/RightSide/Blackboard_Container" unique_id=1126176987]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/RightSide/Blackboard_Container/VBoxContainer" unique_id=169755269]
 layout_mode = 2
 
-[node name="ExportPopup" type="FileDialog" parent="." unique_id=939014018]
+[node name="Submit_Btn" type="Button" parent="CanvasLayer/RightSide/Blackboard_Container/VBoxContainer/HBoxContainer2" unique_id=1760023060]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "SUBMIT"
+
+[node name="TextBlock" type="TextEdit" parent="CanvasLayer/RightSide/Blackboard_Container/VBoxContainer/HBoxContainer2" unique_id=371060358]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ywye")
+placeholder_text = "Enter text here"
+
+[node name="Clear_Btn" type="Button" parent="CanvasLayer/RightSide/Blackboard_Container/VBoxContainer/HBoxContainer2" unique_id=574185906]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "CLEAR"
+
+[node name="Export_Btn" type="Button" parent="CanvasLayer/RightSide/Blackboard_Container/VBoxContainer/HBoxContainer2" unique_id=695608237]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "EXPORT"
+
+[node name="Blackboard__Panel" type="PanelContainer" parent="CanvasLayer/RightSide/Blackboard_Container/VBoxContainer" unique_id=393457755]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Blackboard_Scroll" type="ScrollContainer" parent="CanvasLayer/RightSide/Blackboard_Container/VBoxContainer/Blackboard__Panel" unique_id=486524998]
+layout_mode = 2
+
+[node name="Blackboard_Marg" type="MarginContainer" parent="CanvasLayer/RightSide/Blackboard_Container/VBoxContainer/Blackboard__Panel/Blackboard_Scroll" unique_id=1457647408]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Blackboard" type="VFlowContainer" parent="CanvasLayer/RightSide/Blackboard_Container/VBoxContainer/Blackboard__Panel/Blackboard_Scroll/Blackboard_Marg" unique_id=1932162178]
+layout_mode = 2
+theme_override_constants/v_separation = -24
+
+[node name="Footer" type="Control" parent="CanvasLayer" unique_id=111851442]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Footer" unique_id=2113014268]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/Footer/VBoxContainer" unique_id=1538695532]
+layout_mode = 2
+
+[node name="FooterBar" type="MarginContainer" parent="CanvasLayer/Footer/VBoxContainer" unique_id=2088943319]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="ExportPopup" type="FileDialog" parent="." unique_id=1062924725]
 access = 2
 filters = PackedStringArray("*.png")
 use_native_dialog = true
 
-[connection signal="toggled" from="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[node name="GlyphEdit_Popup" type="Popup" parent="." unique_id=647338414]
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(470, 470)
+visible = true
+
+[node name="GlyphComposer" parent="GlyphEdit_Popup" unique_id=2070876221 instance=ExtResource("5_kry3j")]
+
+[connection signal="item_selected" from="CanvasLayer/TopBar/MainWindow/OptionsBar_Container/OptionsBar_Contents/FontSelector" to="." method="_on_font_selector_item_selected"]
+[connection signal="color_changed" from="CanvasLayer/TopBar/MainWindow/OptionsBar_Container/OptionsBar_Contents/ColorPicker" to="." method="_on_color_picker_color_changed"]
+[connection signal="value_changed" from="CanvasLayer/TopBar/MainWindow/OptionsBar_Container/OptionsBar_Contents/ThicknessBox" to="." method="_on_thickness_box_value_changed"]
+[connection signal="toggled" from="CanvasLayer/TopBar/MainWindow/OptionsBar_Container/OptionsBar_Contents/CheckButton" to="." method="_on_check_button_toggled"]

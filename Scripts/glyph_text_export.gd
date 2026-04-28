@@ -3,13 +3,14 @@ extends Node
 @onready var main : Node = self.get_parent()
 @onready var input_box : TextEdit = main.find_child("TextBlock")
 @onready var submit_btn : Button = main.find_child("Submit_Btn")
+@onready var clear_btn : Button = main.find_child("Clear_Btn")
 @onready var output_field : VFlowContainer = main.find_child("Blackboard")
 
 var glyph : PackedScene = preload("res://Scenes/glyph.tscn")
 var glyph_count : int
 
 @onready var export_btn : Button = main.find_child("Export_Btn")
-@onready var export_frame : SubViewport = main.find_child("Canvas")
+#@onready var export_frame : SubViewport = main.find_child("Canvas")
 @onready var export_window : FileDialog = main.find_child("ExportPopup")
 
 var export_name : String
@@ -21,7 +22,8 @@ var subVP_size : Vector2i = Vector2i(588, 720)
 
 func _ready() -> void:
 	submit_btn.pressed.connect(button_pressed)
-	export_btn.pressed.connect(export_glyph_to_png)
+	clear_btn.pressed.connect(clear_output_field.bind(true))
+	#export_btn.pressed.connect(export_glyph_to_png)
 	export_window.file_selected.connect(get_save_params)
 
 
@@ -97,7 +99,8 @@ func translate_text(text_IDs : Array) -> void:
 
 
 func button_pressed() -> void:
-	clear_output_field()
+	output_field.visible = false
+	clear_output_field(false)
 	
 	var first_step : Array = slice_input_string(input_box.text)
 	
@@ -105,26 +108,30 @@ func button_pressed() -> void:
 	
 	glyph_count = second_step.size()
 	translate_text(second_step)
+	output_field.visible = true
 
 
-func clear_output_field() -> void:
+func clear_output_field(clear_all : bool) -> void:
 	var output_children : Array = output_field.get_children()
+	
+	if clear_all:
+		input_box.text = ""
 	
 	for child in output_children.size():
 		output_children[child].queue_free()
 
 
-func export_glyph_to_png() -> void:
-	await RenderingServer.frame_post_draw
-
-	export_img = export_frame.get_texture().get_image()
-	
-	export_window.set_access(FileDialog.ACCESS_FILESYSTEM)
-	export_window.set_filters(["*.png"])
-	export_window.use_native_dialog = true
-	export_window.set_initial_position(Window.WINDOW_INITIAL_POSITION_CENTER_MAIN_WINDOW_SCREEN)
-	
-	export_window.popup_centered(Vector2i(640, 360))
+#func export_glyph_to_png() -> void:
+	#await RenderingServer.frame_post_draw
+#
+	#export_img = export_frame.get_texture().get_image()
+	#
+	#export_window.set_access(FileDialog.ACCESS_FILESYSTEM)
+	#export_window.set_filters(["*.png"])
+	#export_window.use_native_dialog = true
+	#export_window.set_initial_position(Window.WINDOW_INITIAL_POSITION_CENTER_MAIN_WINDOW_SCREEN)
+	#
+	#export_window.popup_centered(Vector2i(640, 360))
 
 
 func get_save_params(_path : String) -> void:
@@ -150,8 +157,8 @@ func clear_buffer(toggle_on : bool) -> void:
 		return
 
 
-func set_canvas_size() -> void:
-	var unit : Vector2i = Vector2i(164, 164)
-	var columns : int = output_field.get_line_count()
-	var grid_size : Vector2i = Vector2i(columns, 4)
-	export_frame.set_size(Vector2i(grid_size.x * unit.x, grid_size.y * unit.y + 20))
+#func set_canvas_size() -> void:
+	#var unit : Vector2i = Vector2i(164, 164)
+	#var columns : int = output_field.get_line_count()
+	#var grid_size : Vector2i = Vector2i(columns, 4)
+	#export_frame.set_size(Vector2i(grid_size.x * unit.x, grid_size.y * unit.y + 20))

@@ -23,8 +23,10 @@ signal new_glyph_added()
 var prime_IDs : Array = []
 var prime_Matrices : Array = []
 var prime_Defs : Array = []
+var prime_data : Array = []
 var comp_IDs : Array = []
 var comp_Defs : Array = []
+var comp_data : Array = []
 
 ## Glyph Control ##
 var glyph_string : String
@@ -90,13 +92,16 @@ func query_database() -> void:
 	temp_array = prime_db.query_result
 	
 	for row in temp_array.size():
-		var matrix : Vector3
+		var matrix : Vector3i
 		
 		prime_IDs.append(temp_array[row].get("ID"))
 		
-		matrix.x = temp_array[row].get("MatrixID").substr(0, 1).to_int()
-		matrix.y = temp_array[row].get("MatrixID").substr(2, 1).to_int()
-		matrix.z = temp_array[row].get("MatrixID").substr(4, 1).to_int()
+		var matrix_str : Array
+		matrix_str = temp_array[row].get("MatrixID").split(",", false, 0)
+		
+		matrix.x = matrix_str[0].to_int()
+		matrix.y = matrix_str[1].to_int()
+		matrix.z = matrix_str[2].to_int()
 		
 		prime_Matrices.append(matrix)
 		
@@ -111,14 +116,87 @@ func query_database() -> void:
 		comp_Defs.append(temp_array[row].get("Definitions"))
 
 
-func get_database_info(database : SQLite, search_table : String) -> Array:
+func get_database_info(database : SQLite) -> Array:
+	var search_table : String
+	var db_temp_array : Array = []
 	var db_master_array : Array = []
+	
+	if database == prime_db:
+		search_table = "prime_index"
+	elif database == comp_db:
+		search_table = "compound_index"
 	
 	var query = "SELECT * FROM " + search_table + " ORDER BY ID ASC;"
 	database.query(query)
-	db_master_array = database.query_result
+	db_temp_array = database.query_result
+	
+	db_master_array = parse_database(db_temp_array)
+	
+	#for i in db_temp_array.size():
+		#var temp_dict : Dictionary = {}
+		#temp_dict.get_or_add("ID", db_temp_array[i].get("ID"))
+		#
+		#if database == prime_db:
+			#var matrix_vec : Vector3i
+			#var temp_matrix_str : Array
+			#var matrix_array : Array
+			#temp_matrix_str = db_temp_array[i].get("MatrixID").split(";", false, 0)
+			#
+			#for vec in temp_matrix_str.size():
+				#var matrix_str : Array
+				#matrix_str = temp_matrix_str[vec].split(",", false, 0)
+				#
+				#matrix_vec.x = matrix_str[0].to_int()
+				#matrix_vec.y = matrix_str[1].to_int()
+				#matrix_vec.z = matrix_str[2].to_int()
+				#
+				#matrix_array.append(matrix_vec)
+			#
+			#temp_dict.get_or_add("MatrixID", matrix_array)
+		#
+		#var temp_def : Array
+		#temp_def = db_temp_array[i].get("Definitions").split(", ", true, 0)
+		#
+		#temp_dict.get_or_add("Definitions", temp_def)
+		#
+		#db_master_array.append(temp_dict)
+	
 	
 	return db_master_array
+
+
+func parse_database(db_temp_array : Array) -> Array:
+	var result : Array
+	
+	for i in db_temp_array.size():
+		var temp_dict : Dictionary = {}
+		temp_dict.get_or_add("ID", db_temp_array[i].get("ID"))
+		
+		var matrix_vec : Vector3i
+		var temp_matrix_str : Array
+		var matrix_array : Array
+		temp_matrix_str = db_temp_array[i].get("MatrixID").split(";", false, 0)
+		
+		for vec in temp_matrix_str.size():
+			var matrix_str : Array
+			matrix_str = temp_matrix_str[vec].split(",", false, 0)
+			
+			matrix_vec.x = matrix_str[0].to_int()
+			matrix_vec.y = matrix_str[1].to_int()
+			matrix_vec.z = matrix_str[2].to_int()
+			
+			matrix_array.append(matrix_vec)
+		
+		temp_dict.get_or_add("MatrixID", matrix_array)
+		
+		var temp_def : Array
+		temp_def = db_temp_array[i].get("Definitions").split(", ", true, 0)
+		
+		temp_dict.get_or_add("Definitions", temp_def)
+		
+		result.append(temp_dict)
+		
+	return result
 
 
 func search_database(value : String, old_value : String, column : String) -> Array:
@@ -152,7 +230,22 @@ func add_to_database(data_array : Array, database : SQLite) -> void:
 	print("Glyph was added to the dictionary.")
 
 
+func update_comp_matrices(data_array : Array, database : SQLite) -> void:
+	# data_array = [0-New_Matrix, 1-Old_ID]
+	var data = {
+		"MatrixID" : data_array[0]
+	}
+	
+	var criteria = "ID = '" + data_array[1] + "'"
+	
+	if database == prime_db:
+		return
+	else:
+		database.update_rows("compound_index", criteria, data)
+
+
 func update_database(data_array : Array, database : SQLite) -> void:
+	# data_array = [0-New_ID, 1-New_Definitions, 2-Old_ID]
 	var data = {
 		"ID" : data_array[0],
 		"Definitions" : data_array[1]

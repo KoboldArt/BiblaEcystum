@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="BiblaEcystum"
-run/main_scene="uid://dqm1onp41yhwr"
+run/main_scene="uid://5ibdob3sxfuo"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
@@ -27,8 +27,8 @@ SignalBus="*uid://b1cybsnhxavmp"
 
 [display]
 
-window/size/viewport_width=1024
-window/size/viewport_height=768
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [editor_plugins]
 

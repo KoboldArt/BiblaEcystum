@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cxgebk14ymso6"]
 
 [ext_resource type="Script" uid="uid://qmde25n16ca" path="res://Scripts/glyph_selector_popup.gd" id="1_y0h7k"]
+[ext_resource type="PackedScene" uid="uid://bgy4fybk4j30g" path="res://Scenes/glyph_construct.tscn" id="2_y0h7k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0h7k"]
 bg_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
@@ -34,6 +35,12 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_y0h7k"]
+viewport_path = NodePath("GlyphSymbol/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xwlqy"]
+viewport_path = NodePath("SubViewport")
 
 [node name="glyph_selector_popup" type="Control" unique_id=1934102338]
 layout_mode = 3
@@ -85,11 +92,15 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
 tooltip_text = "earth, soil, ground, etc."
 theme_override_colors/icon_normal_color = Color(0.76662105, 0.7666191, 0.7666195, 0.5019608)
 theme_override_styles/normal = SubResource("StyleBoxFlat_ryw4a")
+icon = SubResource("ViewportTexture_y0h7k")
 icon_alignment = 1
 expand_icon = true
 metadata/Glyph_ID = ""
+
+[node name="GlyphSymbol" parent="." unique_id=961254409 instance=ExtResource("2_y0h7k")]
+visible = false
+layout_mode = 0
+texture = SubResource("ViewportTexture_xwlqy")

@@ -37,8 +37,8 @@ var quarter_folder : String = "Quarter/"
 var extrension : String = ".png"
 
 ## Popup Window
-var popup_window : Popup
-var popup_content : Node
+@onready var popup_window : Popup = self.find_child("SelectorPopup")
+@onready var popup_content : Node = popup_window.find_child("glyph_selector_popup")
 var path : String = "res://Scenes/glyph_selector_popup.tscn"
 
 func _ready() -> void:
@@ -53,10 +53,15 @@ func _ready() -> void:
 	
 	draw_glyph()
 	
-	Core.font_changed.connect(_on_new_font_selected)
+	#Core.font_changed.connect(_on_new_font_selected)
 	SignalBus.define_overlay_on.connect(display_labels)
+	SignalBus.change_font.connect(_on_new_font_selected)
+	SignalBus.change_color.connect(color_change)
+	SignalBus.change_thickness.connect(thickness_change)
 	
 	unknown_pnl.visible = false
+	
+	#popup_content.source_glyph = self
 
 
 func update_button_visibility(role : Vector3) -> void:
@@ -67,7 +72,6 @@ func update_button_visibility(role : Vector3) -> void:
 
 func draw_glyph() -> void:
 	glyph_string = self.get_meta("Glyph_ID")
-	separator.set_texture(load(str(Core.cur_font, "Separator-L.png")))
 	
 	self.visible = false
 	unknown_pnl.visible = false
@@ -82,36 +86,50 @@ func draw_glyph() -> void:
 		display_labels(Core.overlay_on)
 		return
 	elif glyph_string.substr(2, 2) == "00":
-		load_glyph(full_folder, glyph_string.substr(0, 2), prime_slot)
+		construct_glyph(glyph_string.substr(0, 2), prime_slot)
+		#load_glyph(full_folder, glyph_string.substr(0, 2), prime_slot)
 		fill_label(prime_label, glyph_string.substr(0, 2))
 		self.visible = true
 		display_labels(Core.overlay_on)
 		return
 	elif glyph_string.substr(4, 2)  == "00":
 		separator.visible = true
-		load_glyph(half_folder, glyph_string.substr(0, 2), define_slot)
+		separator.change_line_type(separator.separator, true)
+		construct_glyph(glyph_string.substr(0, 2), define_slot)
+		#load_glyph(half_folder, glyph_string.substr(0, 2), define_slot)
 		fill_label(define_label, glyph_string.substr(0, 2))
-		load_glyph(half_folder, glyph_string.substr(2, 2), mod_1_slot)
+		construct_glyph(glyph_string.substr(2, 2), mod_1_slot)
+		#load_glyph(half_folder, glyph_string.substr(2, 2), mod_1_slot)
 		fill_label(mod_1_label, glyph_string.substr(2, 2))
 		self.visible = true
 		display_labels(Core.overlay_on)
 		return
 	elif not glyph_string.contains("00"):
 		separator.visible = true
-		load_glyph(half_folder, glyph_string.substr(0, 2), define_slot)
+		separator.change_line_type(separator.separator, true)
+		construct_glyph(glyph_string.substr(0, 2), define_slot)
+		#load_glyph(half_folder, glyph_string.substr(0, 2), define_slot)
 		fill_label(define_label, glyph_string.substr(0, 2))
-		load_glyph(quarter_folder, glyph_string.substr(2, 2), mod_2_slot)
+		construct_glyph(glyph_string.substr(2, 2), mod_2_slot)
+		#load_glyph(quarter_folder, glyph_string.substr(2, 2), mod_2_slot)
 		fill_label(mod_2_label, glyph_string.substr(2, 2))
-		load_glyph(quarter_folder, glyph_string.substr(4, 2), mod_3_slot)
+		construct_glyph(glyph_string.substr(4, 2), mod_3_slot)
+		#load_glyph(quarter_folder, glyph_string.substr(4, 2), mod_3_slot)
 		fill_label(mod_3_label, glyph_string.substr(4, 2))
 		self.visible = true
 		display_labels(Core.overlay_on)
 
 
 func clear_nodes(slot : Node, label : RichTextLabel) -> void:
-	slot.set_texture(null)
+	construct_glyph("00", slot)
+	#slot.set_texture(null)
 	label.text = ""
 	label.get_parent().visible = false
+
+
+func construct_glyph(ID : String, slot : Node) -> void:
+	slot._on_ID_submitted(ID)
+	
 
 
 func load_glyph(type_folder : String, img_name : String, slot : Node) -> void:
@@ -138,26 +156,54 @@ func display_labels(turn_on : bool) -> void:
 
 
 func _on_new_font_selected(index: int) -> void:
-	Core.cur_font = Core.font_dict[index]
+	separator.Line = index
+	
+	for e in slots.size():
+		slots[e].Line = index
+	#Core.cur_font = Core.font_dict[index]
+	draw_glyph()
+
+
+func color_change(color : Color) -> void:
+	separator.change_color(color)
+	
+	for e in slots.size():
+		slots[e].change_color(color)
+
+
+func thickness_change(thickness : float) -> void:
+	separator.line_width = thickness
+	
+	for e in slots.size():
+		slots[e].line_width = thickness
+	
 	draw_glyph()
 
 
 func spawn_popup_window(button : Button) -> void:
-	var new_popup : Popup = Popup.new()
-	var new_content = load(path)
-	
-	new_popup.set_initial_position(Window.WINDOW_INITIAL_POSITION_CENTER_MAIN_WINDOW_SCREEN)
-	new_popup.set_size(Vector2(420, 370))
-	new_popup.transparent = true
-	new_popup.visible = true
-	popup_window = new_popup
-	self.add_child(new_popup)
-	
-	popup_content = new_content.instantiate()
+	#popup_window.popup_centered(Vector2i(420, 370))
+	popup_window.show()
+	#popup_content.visible = true
 	popup_content.source_button = button
-	popup_content.source_glyph = self
-	new_popup.add_child(popup_content)
+	
+	
+	#var new_popup : Popup = Popup.new()
+	#var new_content = load(path)
+	#
+	#new_popup.set_initial_position(Window.WINDOW_INITIAL_POSITION_CENTER_MAIN_WINDOW_SCREEN)
+	#new_popup.set_size(Vector2(420, 370))
+	#new_popup.transparent = true
+	#new_popup.visible = true
+	#popup_window = new_popup
+	#self.add_child(new_popup)
+	#
+	#popup_content = new_content.instantiate()
+	#
+	#
+	#new_popup.add_child(popup_content)
 
 
 func drop_popup(popup : Popup) -> void:
-	popup.queue_free()
+	popup.hide()
+	#popup_content.visible = false
+	#popup.queue_free()

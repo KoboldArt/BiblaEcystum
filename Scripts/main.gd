@@ -1,18 +1,19 @@
 extends Node
 
-@onready var dictionary_glyph : Node = self.find_child("Glyph_Dict")
 @onready var search_box: LineEdit = self.find_child("SearchBox")
-@onready var display_box: RichTextLabel = self.find_child("DisplayBox")
 @onready var search_button: Button = self.find_child("SearchButton")
 @onready var suggestion_scroll : ScrollContainer = self.find_child("SuggestionScroll")
 @onready var suggestion_list : VBoxContainer = self.find_child("SuggestionList")
+@onready var library : Node = self.find_child("Library_Control")
+@onready var blackboard : Node = self.find_child("Blackboard_Control")
+@onready var undefined_cont : Node = self.find_child("UndefinedGlyphContainer")
+@onready var display_box: RichTextLabel = self.find_child("DisplayBox")
 @onready var add_unknown_btn : Button = self.find_child("AddUndefinedBtn")
 @onready var font_selector : OptionButton = self.find_child("FontSelector")
+@onready var line_thickness : SpinBox = self.find_child("ThicknessBox")
+@onready var line_color : ColorPickerButton = self.find_child("ColorPicker")
 
 var suggestion_scroll_length : int
-
-
-@onready var test_btn : Button = self.find_child("TestButton")
 
 
 func _ready() -> void:
@@ -24,15 +25,16 @@ func _ready() -> void:
 	search_button.pressed.connect(_on_search_button_pressed)
 	
 	suggestion_scroll.visible = false
-	add_unknown_btn.visible = false
-	
-	dictionary_glyph.update_button_visibility(Vector3(0, 0, 0))
+	undefined_cont.visible = false
+
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+		SignalBus.emit_define_overlay(toggled_on)
+		Core.overlay_on = toggled_on
 
 
 func get_input_box_string(is_suggestion : bool) -> void:
 	display_box.text = ""
-	dictionary_glyph.set_meta("Glyph_ID", "000000")
-	dictionary_glyph.draw_glyph()
 	
 	if is_suggestion:
 		if search_box.text.length() > 1:
@@ -41,7 +43,14 @@ func get_input_box_string(is_suggestion : bool) -> void:
 		else:
 			return
 	else:
-		stepped_search(search_box.text)
+		if search_box.text != "":
+			stepped_search(search_box.text)
+		else:
+			library.toggle_visible_cards()
+			library.toggle_view(true)
+
+
+#region Search handling
 
 
 func _on_search_button_pressed() -> void:
@@ -58,21 +67,18 @@ func stepped_search(search_string : String) -> void:
 	var search = db_search(Core.prime_db, search_string, "prime_index", "Definitions")
 
 	if search != []:
-		dictionary_glyph.set_meta("Glyph_ID", search[0].get("ID"))
-		dictionary_glyph.draw_glyph()
 		display_box.text = search[0].get("Definitions")
+		library.search_toggle(search[0].get("ID"))
 	else:
 		search = db_search(Core.comp_db, search_string, "compound_index", "Definitions")
 		if search != []:
-			dictionary_glyph.set_meta("Glyph_ID", search[0].get("ID"))
-			dictionary_glyph.draw_glyph()
 			display_box.text = search[0].get("Definitions")
+			library.search_toggle(search[0].get("ID"))
 		else:
-			dictionary_glyph.set_meta("Glyph_ID", "000000")
-			dictionary_glyph.draw_glyph()
 			display_box.text = "Unknown Phrase"
+			library.toggle_view(false)
 			add_unknown_btn.set_meta("UnknownDefinition", search_box.text)
-			add_unknown_btn.visible = true
+			undefined_cont.visible = true
 			return
 
 
@@ -81,13 +87,19 @@ func db_search(database : SQLite, search_term : String, table : String, column :
 	database.query(query)
 	
 	return database.query_result
+#endregion
+
+
+#region Suggestion handling
 
 
 func _on_input_box_text_update(_new_text: String) -> void:
-	add_unknown_btn.visible = false
+	undefined_cont.visible = false
+	
 	suggestion_scroll.visible = false
 	suggestion_scroll_length = 0
 	clear_suggestion_list(suggestion_list.get_children())
+	
 	get_input_box_string(true)
 
 
@@ -155,7 +167,7 @@ func create_suggestion_button(btn_text : String, btn_meta : String) -> void:
 	var button = Button.new()
 	
 	button.text = btn_text
-	button.custom_minimum_size.x = 200
+	button.custom_minimum_size.x = 150
 	button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 	button.pressed.connect(suggestion_selected.bind(button))
 	button.theme_type_variation = "FlatButton"
@@ -169,18 +181,16 @@ func create_suggestion_button(btn_text : String, btn_meta : String) -> void:
 func suggestion_selected(button : Button) -> void:
 	suggestion_scroll.visible = false
 	search_box.text = button.text
+	get_input_box_string(false)
 	
-	dictionary_glyph.set_meta("Glyph_ID", button.get_meta("Glyph_ID"))
-	dictionary_glyph.draw_glyph()
-	
-	var search : Array
-	search = db_search(Core.prime_db, button.get_meta("Glyph_ID"), "prime_index", "ID")
-	
-	if search != []:
-		display_box.text = search[0].get("Definitions")
-	else:
-		search = db_search(Core.comp_db, button.get_meta("Glyph_ID"), "compound_index", "ID")
-		display_box.text = search[0].get("Definitions")
+	#var search : Array
+	#search = db_search(Core.prime_db, button.get_meta("Glyph_ID"), "prime_index", "ID")
+	#
+	#if search != []:
+		#display_box.text = search[0].get("Definitions")
+	#else:
+		#search = db_search(Core.comp_db, button.get_meta("Glyph_ID"), "compound_index", "ID")
+		#display_box.text = search[0].get("Definitions")
 
 
 func _input(event: InputEvent) -> void:
@@ -192,6 +202,16 @@ func _input(event: InputEvent) -> void:
 				search_box.unedit()
 
 
-func _on_check_button_toggled(toggled_on: bool) -> void:
-		SignalBus.emit_define_overlay(toggled_on)
-		Core.overlay_on = toggled_on
+#endregion
+
+
+func _on_color_picker_color_changed(color: Color) -> void:
+	SignalBus.emit_color_change(color)
+
+
+func _on_thickness_box_value_changed(value: float) -> void:
+	SignalBus.emit_thickness_change(value)
+
+
+func _on_font_selector_item_selected(index: int) -> void:
+	SignalBus.emit_font_change(index)

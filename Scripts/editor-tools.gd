@@ -22,6 +22,7 @@ var Defs_to_Options : bool = false
 var SQLite_VirtualTabel : bool = false
 var FillVirtualDB : bool = false
 var VirtualPrime : bool = false
+var AddButton : bool = false
 
 
 ##=================================================================##
@@ -62,6 +63,13 @@ func _run() -> void:
 	#SQLite_VirtualTabel = true
 	#FillVirtualDB = true
 	#VirtualPrime = true
+	#AddButton = true
+	
+	
+	if AddButton:
+		var node = EditorInterface.get_selection().get_selected_nodes()
+		var run_function = node[0]
+		run_function.populate_list()
 	
 	
 	if SQLite_VirtualTabel:

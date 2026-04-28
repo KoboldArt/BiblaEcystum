@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://dqm1onp41yhwr"]
+
+[ext_resource type="Script" uid="uid://bqhtvotxdgary" path="res://Scripts/main.gd" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://ddu7jl2vptfvk" path="res://Scripts/menu_control.gd" id="2_kry3j"]
+[ext_resource type="Script" uid="uid://b8xni4ub14heu" path="res://Scripts/glyph_library.gd" id="4_6bp64"]
+[ext_resource type="PackedScene" uid="uid://b3352kavs4j3y" path="res://Scenes/glyph_dictionary.tscn" id="4_21xkr"]
+[ext_resource type="Script" uid="uid://0hmin8fw8ty3" path="res://Scripts/glyph_text_export.gd" id="4_344ge"]
+[ext_resource type="PackedScene" uid="uid://bjraj25yxyxsb" path="res://Scenes/glyph_library.tscn" id="7_6bp64"]
+[ext_resource type="PackedScene" uid="uid://br4t3mjyxcp4d" path="res://Scenes/glyph_text_export.tscn" id="7_344ge"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_21xkr"]
+content_margin_left = 16.0
+content_margin_top = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6bp64"]
+content_margin_left = 16.0
+content_margin_top = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_344ge"]
+content_margin_left = 16.0
+content_margin_top = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ynf5e"]
+content_margin_left = 16.0
+content_margin_top = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjvhh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjvhh"]
+content_margin_top = 5.0
+bg_color = Color(0.14767182, 0.14767182, 0.14767176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kry3j"]
+content_margin_left = 15.0
+content_margin_right = 15.0
+bg_color = Color(0.20871013, 0.20871016, 0.20871004, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bp64"]
+content_margin_left = 15.0
+content_margin_right = 15.0
+bg_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21xkr"]
+content_margin_left = 15.0
+content_margin_right = 15.0
+bg_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kry3j"]
+
+[node name="main" type="Node2D" unique_id=451110635]
+script = ExtResource("1_jjgbg")
+
+[node name="Menu_Control" type="Node" parent="." unique_id=594471207]
+script = ExtResource("2_kry3j")
+
+[node name="Library_Control" type="Node" parent="." unique_id=960952396]
+script = ExtResource("4_6bp64")
+
+[node name="TextExport_Control" type="Node" parent="." unique_id=1133248257]
+script = ExtResource("4_344ge")
+
+[node name="UI_Layer" type="CanvasLayer" parent="." unique_id=833846491]
+
+[node name="Control" type="Control" parent="UI_Layer" unique_id=431592528]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainWindow" type="VBoxContainer" parent="UI_Layer/Control" unique_id=588576530]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBar" type="MenuBar" parent="UI_Layer/Control/MainWindow" unique_id=724147197]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_21xkr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6bp64")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_344ge")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ynf5e")
+
+[node name="FileMenu" type="PopupMenu" parent="UI_Layer/Control/MainWindow/MenuBar" unique_id=1424356793]
+title = "File"
+item_count = 5
+item_0/text = "New Glyph"
+item_0/id = 0
+item_1/text = "Export"
+item_1/id = 1
+item_2/text = "Preferences"
+item_2/id = 2
+item_3/id = 10
+item_3/separator = true
+item_4/text = "Quit"
+item_4/id = 3
+
+[node name="HelpMenu" type="PopupMenu" parent="UI_Layer/Control/MainWindow/MenuBar" unique_id=1831147073]
+title = "Help"
+item_count = 2
+item_0/text = "Help"
+item_0/id = 0
+item_1/text = "About"
+item_1/id = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_Layer/Control/MainWindow/MenuBar" unique_id=989491442]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 450
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer" unique_id=1302054038]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="TestButton" type="Button" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer" unique_id=181275937]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Test Button"
+
+[node name="CheckButton" type="CheckButton" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer" unique_id=1910160150]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer" unique_id=1023457568]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "Prime Overlay"
+vertical_alignment = 1
+
+[node name="FontLabel" type="RichTextLabel" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer" unique_id=1464542588]
+custom_minimum_size = Vector2(50, 32)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Font:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="FontSelector" type="OptionButton" parent="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer" unique_id=629270832]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+size_flags_vertical = 0
+selected = 0
+item_count = 2
+popup/item_0/text = "Simple White"
+popup/item_0/id = 0
+popup/item_1/text = "Simple Black"
+popup/item_1/id = 1
+
+[node name="DictionaryTab" type="TabContainer" parent="UI_Layer/Control/MainWindow" unique_id=191675090]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/tab_separation = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jjvhh")
+theme_override_styles/tabbar_background = SubResource("StyleBoxFlat_jjvhh")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_kry3j")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_6bp64")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_21xkr")
+current_tab = 2
+
+[node name="Dictionary" type="PanelContainer" parent="UI_Layer/Control/MainWindow/DictionaryTab" unique_id=362691492]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kry3j")
+metadata/_tab_index = 0
+
+[node name="Dict_Contents" parent="UI_Layer/Control/MainWindow/DictionaryTab/Dictionary" unique_id=1722322359 instance=ExtResource("4_21xkr")]
+layout_mode = 2
+
+[node name="Library" type="PanelContainer" parent="UI_Layer/Control/MainWindow/DictionaryTab" unique_id=758163340]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kry3j")
+metadata/_tab_index = 1
+
+[node name="Library_Contents" parent="UI_Layer/Control/MainWindow/DictionaryTab/Library" unique_id=509814113 instance=ExtResource("7_6bp64")]
+layout_mode = 2
+
+[node name="TextExport" type="PanelContainer" parent="UI_Layer/Control/MainWindow/DictionaryTab" unique_id=1631138650]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kry3j")
+metadata/_tab_index = 2
+
+[node name="TextExport_Contents" parent="UI_Layer/Control/MainWindow/DictionaryTab/TextExport" unique_id=202106026 instance=ExtResource("7_344ge")]
+layout_mode = 2
+
+[node name="ExportPopup" type="FileDialog" parent="." unique_id=939014018]
+access = 2
+filters = PackedStringArray("*.png")
+use_native_dialog = true
+
+[connection signal="toggled" from="UI_Layer/Control/MainWindow/MenuBar/MarginContainer/HBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]

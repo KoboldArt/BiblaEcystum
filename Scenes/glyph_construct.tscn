@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bgy4fybk4j30g"]
+
+[ext_resource type="Script" uid="uid://bwnug6sho6o0p" path="res://Scripts/subglyph_construct.gd" id="1_tnkdg"]
+[ext_resource type="PackedScene" uid="uid://bxdff6bq85jf5" path="res://Scenes/elements.tscn" id="2_cqm7q"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tnkdg"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Control" type="TextureRect" unique_id=961254409]
+offset_right = 128.0
+offset_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("ViewportTexture_tnkdg")
+script = ExtResource("1_tnkdg")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=2077629104]
+transparent_bg = true
+snap_2d_transforms_to_pixel = true
+size = Vector2i(128, 128)
+
+[node name="Elements" parent="SubViewport" unique_id=1381780833 instance=ExtResource("2_cqm7q")]

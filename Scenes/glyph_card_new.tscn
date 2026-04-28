@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dm6djc08n1qej"]
+
+[ext_resource type="PackedScene" uid="uid://bpuipjxe5racv" path="res://Scenes/glyph.tscn" id="1_ce0ww"]
+[ext_resource type="Script" uid="uid://b5civdpmvanay" path="res://Scripts/card_info_new.gd" id="1_o7cu7"]
+
+[node name="GlyphCard" type="Button" unique_id=205152838]
+custom_minimum_size = Vector2(100, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -45.0
+offset_right = 45.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o7cu7")
+metadata/Glyph_ID = ""
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1288892993]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -70.0
+offset_right = 135.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+
+[node name="ID_Box" type="RichTextLabel" parent="VBoxContainer" unique_id=113232607]
+visible = false
+custom_minimum_size = Vector2(65, 24)
+layout_mode = 2
+focus_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 0.5019608)
+bbcode_enabled = true
+text = "000000"
+horizontal_alignment = 1
+vertical_alignment = 1
+selection_enabled = true
+
+[node name="Glyph" parent="VBoxContainer" unique_id=917642904 instance=ExtResource("1_ce0ww")]
+layout_mode = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+metadata/Glyph_ID = "M20000"
+
+[node name="CardDef_Box" type="RichTextLabel" parent="VBoxContainer" unique_id=925920090]
+custom_minimum_size = Vector2(0, 108)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Test this is the thesis"
+horizontal_alignment = 1

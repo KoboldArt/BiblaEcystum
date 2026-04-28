@@ -1,7 +1,9 @@
 QoL
-[] - List of english definitions of glyphs. On click they bring up the glyph as a popup.
-[] - Colorize Glyph
-[] - Add new Glyph font.
+[] - Complete UI rework. (minor logic rework)
+[] - Word buttons on click bring up the glyph as a popup.
+[] - Optimize Glyph drawing algorythm. (too complicated atm)
+[] - Fonts as JSON format
+[] - Add new Glyph font (Made with Balázs' Gerbil Icon Editor as JSON exports)
 [] - Export resolution?
 
 Feature
@@ -13,12 +15,13 @@ Misc.
 [] - File menu options?
 [] - Write the About Popup
 [] - Make HELP slides
-[] - Font texture atlas
-[] - Fonts as vectors
 
 
 ## ========================================================================== ##
 DONE
+[+] - List of english definitions of glyphs.
+[+] - Colorize Glyph
+[+] - Fonts as vectors
 [+] - Visual list for Glyphs. New tab: "Library" (?)
 [+] - Edit existing Glyphs. Prime - only definition, Compound - definition and elements.
 [+] - Validate and Save Edited Glyphs.
@@ -32,3 +35,7 @@ DONE
 	[+] - Simple export to transparent .PNG
 	[+] - User can select export folder at each export (and/or pre-define in preferences?)
 	
+
+## ========================================================================== ##
+DROPPED
+[-] - Font texture atlas

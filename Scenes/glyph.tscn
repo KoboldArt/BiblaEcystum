@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bpuipjxe5racv"]
 
 [ext_resource type="Script" uid="uid://cml0vlf6cxdks" path="res://Scripts/glyph.gd" id="1_u2v7n"]
+[ext_resource type="PackedScene" uid="uid://bgy4fybk4j30g" path="res://Scenes/glyph_construct.tscn" id="2_gb8vh"]
 [ext_resource type="Texture2D" uid="uid://brlonxw3th5e8" path="res://Resources/Symbols/SimpleWhite/Separator-L.png" id="2_l2emf"]
+[ext_resource type="PackedScene" uid="uid://cxgebk14ymso6" path="res://Scenes/glyph_selector_popup.tscn" id="4_yawfd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivvhe"]
 content_margin_left = 2.0
@@ -19,8 +21,26 @@ corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u2v7n"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_yawfd"]
+viewport_path = NodePath("SubViewport")
+
 [sub_resource type="Theme" id="Theme_u2v7n"]
 RichTextLabel/constants/outline_size = 8
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_l2emf"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_omqt8"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cma2c"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rsk5n"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2exri"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omqt8"]
 bg_color = Color(0.45840496, 0.45840508, 0.4584049, 1)
@@ -149,10 +169,14 @@ size_flags_vertical = 4
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_right = 0
 
-[node name="Prime" type="TextureRect" parent="GlyphPanel/Glyph_Margin/Prime_Margin" unique_id=919221351]
+[node name="Prime_" type="TextureRect" parent="GlyphPanel/Glyph_Margin/Prime_Margin" unique_id=919221351]
 layout_mode = 2
 expand_mode = 2
 stretch_mode = 4
+
+[node name="Prime" parent="GlyphPanel/Glyph_Margin/Prime_Margin" unique_id=580798699 instance=ExtResource("2_gb8vh")]
+layout_mode = 2
+texture = SubResource("ViewportTexture_yawfd")
 
 [node name="PrimePanel" type="MarginContainer" parent="GlyphPanel/Glyph_Margin/Prime_Margin/Prime" unique_id=503429772]
 visible = false
@@ -161,9 +185,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 160.0
-offset_top = -32.0
+offset_top = -31.0
 offset_right = 160.0
-offset_bottom = -96.0
+offset_bottom = -95.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -195,11 +219,17 @@ theme_override_constants/margin_left = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 66
 
-[node name="Definer" type="TextureRect" parent="GlyphPanel/Glyph_Margin/Definer_Margin" unique_id=256875333]
+[node name="Definer_" type="TextureRect" parent="GlyphPanel/Glyph_Margin/Definer_Margin" unique_id=256875333]
+visible = false
 custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 expand_mode = 2
 stretch_mode = 4
+
+[node name="Definer" parent="GlyphPanel/Glyph_Margin/Definer_Margin" unique_id=961254409 instance=ExtResource("2_gb8vh")]
+layout_mode = 2
+texture = SubResource("ViewportTexture_l2emf")
+G_Type = 1
 
 [node name="DefinerPanel" type="MarginContainer" parent="GlyphPanel/Glyph_Margin/Definer_Margin/Definer" unique_id=1862012228]
 visible = false
@@ -243,13 +273,18 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 32
 
-[node name="Separator-L" type="TextureRect" parent="GlyphPanel/Glyph_Margin/Separator-L_Margin" unique_id=1703334449]
+[node name="Separator-L_" type="TextureRect" parent="GlyphPanel/Glyph_Margin/Separator-L_Margin" unique_id=1703334449]
 visible = false
 custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 texture = ExtResource("2_l2emf")
 expand_mode = 2
 stretch_mode = 4
+
+[node name="Separator-L" parent="GlyphPanel/Glyph_Margin/Separator-L_Margin" unique_id=408467580 instance=ExtResource("2_gb8vh")]
+layout_mode = 2
+texture = SubResource("ViewportTexture_omqt8")
+G_Type = 3
 
 [node name="Modifier_01_Margin" type="MarginContainer" parent="GlyphPanel/Glyph_Margin" unique_id=1560553134]
 custom_minimum_size = Vector2(128, 64)
@@ -260,11 +295,17 @@ theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 66
 theme_override_constants/margin_right = 0
 
-[node name="Modifier_01" type="TextureRect" parent="GlyphPanel/Glyph_Margin/Modifier_01_Margin" unique_id=1085906437]
+[node name="Modifier_01_" type="TextureRect" parent="GlyphPanel/Glyph_Margin/Modifier_01_Margin" unique_id=1085906437]
+visible = false
 custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 expand_mode = 2
 stretch_mode = 4
+
+[node name="Modifier_01" parent="GlyphPanel/Glyph_Margin/Modifier_01_Margin" unique_id=988552196 instance=ExtResource("2_gb8vh")]
+layout_mode = 2
+texture = SubResource("ViewportTexture_cma2c")
+G_Type = 1
 
 [node name="Modifier01Panel" type="MarginContainer" parent="GlyphPanel/Glyph_Margin/Modifier_01_Margin/Modifier_01" unique_id=413248055]
 visible = false
@@ -306,11 +347,17 @@ size_flags_vertical = 4
 theme_override_constants/margin_top = 66
 theme_override_constants/margin_right = 52
 
-[node name="Modifier_02" type="TextureRect" parent="GlyphPanel/Glyph_Margin/Modifier_02_Margin" unique_id=2075932317]
+[node name="Modifier_02_" type="TextureRect" parent="GlyphPanel/Glyph_Margin/Modifier_02_Margin" unique_id=2075932317]
+visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 expand_mode = 2
 stretch_mode = 4
+
+[node name="Modifier_02" parent="GlyphPanel/Glyph_Margin/Modifier_02_Margin" unique_id=33561645 instance=ExtResource("2_gb8vh")]
+layout_mode = 2
+texture = SubResource("ViewportTexture_rsk5n")
+G_Type = 2
 
 [node name="Modifier02Panel" type="MarginContainer" parent="GlyphPanel/Glyph_Margin/Modifier_02_Margin/Modifier_02" unique_id=1238747592]
 visible = false
@@ -352,11 +399,17 @@ size_flags_vertical = 4
 theme_override_constants/margin_left = 52
 theme_override_constants/margin_top = 66
 
-[node name="Modifier_03" type="TextureRect" parent="GlyphPanel/Glyph_Margin/Modifier_03_Margin" unique_id=30851552]
+[node name="Modifier_03_" type="TextureRect" parent="GlyphPanel/Glyph_Margin/Modifier_03_Margin" unique_id=30851552]
+visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 expand_mode = 2
 stretch_mode = 4
+
+[node name="Modifier_03" parent="GlyphPanel/Glyph_Margin/Modifier_03_Margin" unique_id=1935457539 instance=ExtResource("2_gb8vh")]
+layout_mode = 2
+texture = SubResource("ViewportTexture_2exri")
+G_Type = 2
 
 [node name="Modifier03Panel" type="MarginContainer" parent="GlyphPanel/Glyph_Margin/Modifier_03_Margin/Modifier_03" unique_id=915577162]
 visible = false
@@ -458,6 +511,7 @@ text = "Modifier B"
 metadata/Selected_ID = ""
 
 [node name="UnknownPanel" type="PanelContainer" parent="." unique_id=1011934777]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -480,3 +534,13 @@ size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_u2v7n")
 text = "Unknown
 Concept"
+
+[node name="SelectorPopup" type="Popup" parent="." unique_id=2135410509]
+process_mode = 3
+transparent_bg = true
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(420, 370)
+transparent = true
+
+[node name="glyph_selector_popup" parent="SelectorPopup" unique_id=1934102338 instance=ExtResource("4_yawfd")]
